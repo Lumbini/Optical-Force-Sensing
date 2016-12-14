@@ -1,0 +1,2 @@
+NET "fpga_clk" LOC = V10;
+NET "fpga_clk" PERIOD = 10.0ns HIGH 50%;

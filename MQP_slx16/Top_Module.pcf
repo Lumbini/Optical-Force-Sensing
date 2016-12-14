@@ -1,0 +1,13 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Tue Dec 13 21:37:13 2016
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "sensor_clk" LOCATE = SITE "L3" LEVEL 1;
+COMP "SI1" LOCATE = SITE "K6" LEVEL 1;
+COMP "chip_select" LOCATE = SITE "H3" LEVEL 1;
+COMP "fpga_clk" LOCATE = SITE "V10" LEVEL 1;
+COMP "ADC_clk" LOCATE = SITE "G3" LEVEL 1;
+NET "clock_manager/clkin1" PERIOD = 10 ns HIGH 50%;
+SCHEMATIC END;
+

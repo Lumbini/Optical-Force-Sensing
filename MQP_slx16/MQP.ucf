@@ -1,0 +1,10 @@
+NET "fpga_clk" LOC = V10;
+NET "fpga_clk" PERIOD = 10.0ns HIGH 50%;
+
+#inputs
+
+#outputs
+NET "SI1" 			LOC = K6;
+NET "sensor_clk" 	LOC = L3;
+NET "ADC_clk" 		LOC = G3;
+NET "chip_select" LOC = H3;
