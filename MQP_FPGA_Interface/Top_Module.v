@@ -27,7 +27,7 @@ module Top_Module(
 	output sensor_clk,
 	output ADC_clk,
 	output chip_select,
-	output clk_20M_out,
+	//output clk_20M_out,
 	output [11:0]Data1,
 	output [11:0]Data2
     );
@@ -41,7 +41,7 @@ module Top_Module(
 	 wire cs_int;
 	 
 	 assign SI1 = sample_control_signal;
-	 assign clk_20M_out = clk_20M;
+	 //assign clk_20M_out = clk_20M;
 	 
 	 Serial_Sample_Control sample_control(sensor_clk_int, reset, sample_control_signal);
 	 
