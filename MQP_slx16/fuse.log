@@ -1,7 +1,7 @@
 Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o R:/MQP/MQP_slx16/MQP_Test_isim_beh.exe -prj R:/MQP/MQP_slx16/MQP_Test_beh.prj work.MQP_Test work.glbl 
 ISim P.20131013 (signature 0x7708f090)
-Number of CPUs detected in this system: 4
-Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
 Determining compilation order of HDL files
 Analyzing Verilog file "R:/MQP/MQP_slx16/ipcore_dir/DCM_MQP.v" into library work
 Analyzing Verilog file "R:/MQP/MQP_slx16/Serial_Sample_Control.v" into library work
@@ -16,11 +16,8 @@ Compiling module Serial_Sample_Control
 Compiling module sensor_clk_divider
 Compiling module ADC_control
 Compiling module IBUFG
-Compiling module dcm_sp_clock_divide_by_2
-Compiling module dcm_sp_maximum_period_check(cloc...
-Compiling module dcm_sp_maximum_period_check(cloc...
-Compiling module dcm_sp_clock_lost
-Compiling module DCM_SP(CLKDV_DIVIDE=5.0,CLKFX_DI...
+Compiling module PLL_ADV(BANDWIDTH="OPTIMIZED",CL...
+Compiling module PLL_BASE(CLKFBOUT_MULT=4,CLKIN_P...
 Compiling module BUFG
 Compiling module DCM_MQP
 Compiling module ODDR2_default
@@ -28,8 +25,7 @@ Compiling module Top_Module
 Compiling module MQP_Test
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 15 Verilog Units
+Compiled 12 Verilog Units
 Built simulation executable R:/MQP/MQP_slx16/MQP_Test_isim_beh.exe
-Fuse Memory Usage: 32988 KB
-Fuse CPU Usage: 514 ms
+Fuse Memory Usage: 43524 KB
+Fuse CPU Usage: 872 ms

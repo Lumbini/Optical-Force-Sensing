@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.26 secs
+Total CPU time to Xst completion: 0.23 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.27 secs
+Total CPU time to Xst completion: 0.24 secs
  
 --> Reading design: Top_Module.prj
 
@@ -110,6 +110,8 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 Analyzing Verilog file "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\ipcore_dir\DCM_MQP.v" into library work
 Parsing module <DCM_MQP>.
+Analyzing Verilog file "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\SPI_to_USB.v" into library work
+Parsing module <SPI_to_USB>.
 Analyzing Verilog file "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\Serial_Sample_Control.v" into library work
 Parsing module <Serial_Sample_Control>.
 Analyzing Verilog file "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\sensor_clk_divider.v" into library work
@@ -130,17 +132,22 @@ Elaborating module <Serial_Sample_Control>.
 Elaborating module <sensor_clk_divider>.
 
 Elaborating module <ADC_control>.
+WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\Top_Module.v" Line 64: Assignment to Data2 ignored, since the identifier is never used
+
+Elaborating module <SPI_to_USB>.
 
 Elaborating module <DCM_MQP>.
 
 Elaborating module <IBUFG>.
 
-Elaborating module <DCM_SP(CLKDV_DIVIDE=5.0,CLKFX_DIVIDE=10,CLKFX_MULTIPLY=2,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=10.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
-WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\ipcore_dir\DCM_MQP.v" Line 132: Assignment to status_int ignored, since the identifier is never used
+Elaborating module <PLL_BASE(BANDWIDTH="OPTIMIZED",CLK_FEEDBACK="CLKFBOUT",COMPENSATION="SYSTEM_SYNCHRONOUS",DIVCLK_DIVIDE=1,CLKFBOUT_MULT=4,CLKFBOUT_PHASE=0.0,CLKOUT0_DIVIDE=50,CLKOUT0_PHASE=0.0,CLKOUT0_DUTY_CYCLE=0.5,CLKOUT1_DIVIDE=100,CLKOUT1_PHASE=0.0,CLKOUT1_DUTY_CYCLE=0.5,CLKIN_PERIOD=10.0,REF_JITTER=0.01)>.
+WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\ipcore_dir\DCM_MQP.v" Line 121: Assignment to clkout2_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\ipcore_dir\DCM_MQP.v" Line 122: Assignment to clkout3_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\ipcore_dir\DCM_MQP.v" Line 123: Assignment to clkout4_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\ipcore_dir\DCM_MQP.v" Line 124: Assignment to clkout5_unused ignored, since the identifier is never used
 
 Elaborating module <BUFG>.
-WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\Top_Module.v" Line 66: Assignment to clk_100M ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\Top_Module.v" Line 70: Assignment to lock ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\Top_Module.v" Line 85: Assignment to lock ignored, since the identifier is never used
 
 Elaborating module <ODDR2(DDR_ALIGNMENT="NONE",INIT=1'b0,SRTYPE="SYNC")>.
 
@@ -150,8 +157,8 @@ Elaborating module <ODDR2(DDR_ALIGNMENT="NONE",INIT=1'b0,SRTYPE="SYNC")>.
 
 Synthesizing Unit <Top_Module>.
     Related source file is "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\Top_Module.v".
-INFO:Xst:3210 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\Top_Module.v" line 62: Output port <CLK_OUT1> of the instance <clock_manager> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\Top_Module.v" line 62: Output port <LOCKED> of the instance <clock_manager> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\Top_Module.v" line 55: Output port <pdata2> of the instance <ADC1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\Top_Module.v" line 77: Output port <LOCKED> of the instance <clock_manager> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <Top_Module> synthesized.
@@ -185,15 +192,27 @@ Synthesizing Unit <ADC_control>.
     Found 5-bit register for signal <sdata_cntr>.
     Found 12-bit register for signal <pdata1>.
     Found 12-bit register for signal <pdata2>.
+    Found 1-bit register for signal <new_Data>.
     Found 7-bit register for signal <cntr>.
-    Found 7-bit subtractor for signal <cntr[6]_GND_4_o_sub_4_OUT> created at line 60.
-    Found 3-bit subtractor for signal <cs_delay[2]_GND_4_o_sub_10_OUT> created at line 70.
-    Found 5-bit adder for signal <sdata_cntr[4]_GND_4_o_add_16_OUT> created at line 100.
+    Found 7-bit subtractor for signal <cntr[6]_GND_4_o_sub_5_OUT> created at line 63.
+    Found 3-bit subtractor for signal <cs_delay[2]_GND_4_o_sub_11_OUT> created at line 73.
+    Found 5-bit adder for signal <sdata_cntr[4]_GND_4_o_add_17_OUT> created at line 104.
     Summary:
 	inferred   3 Adder/Subtractor(s).
-	inferred  64 D-type flip-flop(s).
+	inferred  65 D-type flip-flop(s).
 	inferred   4 Multiplexer(s).
 Unit <ADC_control> synthesized.
+
+Synthesizing Unit <SPI_to_USB>.
+    Related source file is "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\SPI_to_USB.v".
+WARNING:Xst:647 - Input <new_Data> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 2-bit register for signal <cs_sync<1:0>>.
+    Found 16-bit register for signal <shift_out>.
+    Found 3-bit register for signal <sclk_sync>.
+    WARNING:Xst:2404 -  FFs/Latches <ndata<0:0>> (without init value) have a constant value of 0 in block <SPI_to_USB>.
+    Summary:
+	inferred  21 D-type flip-flop(s).
+Unit <SPI_to_USB> synthesized.
 
 Synthesizing Unit <DCM_MQP>.
     Related source file is "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\ipcore_dir\DCM_MQP.v".
@@ -210,10 +229,12 @@ Macro Statistics
  5-bit adder                                           : 2
  7-bit subtractor                                      : 1
  9-bit adder                                           : 1
-# Registers                                            : 10
- 1-bit register                                        : 1
+# Registers                                            : 14
+ 1-bit register                                        : 2
  12-bit register                                       : 4
- 3-bit register                                        : 1
+ 16-bit register                                       : 1
+ 2-bit register                                        : 1
+ 3-bit register                                        : 2
  5-bit register                                        : 2
  7-bit register                                        : 1
  9-bit register                                        : 1
@@ -230,6 +251,27 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+WARNING:Xst:1710 - FF/Latch <shift_out_0> (without init value) has a constant value of 0 in block <SPI_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_1> (without init value) has a constant value of 0 in block <SPI_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_2> (without init value) has a constant value of 0 in block <SPI_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_3> (without init value) has a constant value of 0 in block <SPI_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_4> (without init value) has a constant value of 0 in block <SPI_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_5> (without init value) has a constant value of 0 in block <SPI_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_6> (without init value) has a constant value of 0 in block <SPI_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_7> (without init value) has a constant value of 0 in block <SPI_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_8> (without init value) has a constant value of 0 in block <SPI_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_9> (without init value) has a constant value of 0 in block <SPI_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_10> (without init value) has a constant value of 0 in block <SPI_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_11> (without init value) has a constant value of 0 in block <SPI_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_12> (without init value) has a constant value of 0 in block <SPI_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_13> (without init value) has a constant value of 0 in block <SPI_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_14> (without init value) has a constant value of 0 in block <SPI_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_15> (without init value) has a constant value of 0 in block <SPI_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <cs_sync_0> is unconnected in block <SPI_out>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <cs_sync_1> is unconnected in block <SPI_out>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <sclk_sync_2> is unconnected in block <SPI_out>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <sclk_sync_0> is unconnected in block <SPI_out>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <sclk_sync_1> is unconnected in block <SPI_out>.
 
 Synthesizing (advanced) Unit <ADC_control>.
 The following registers are absorbed into counter <cs_delay>: 1 register on signal <cs_delay>.
@@ -254,8 +296,8 @@ Macro Statistics
  5-bit up counter                                      : 2
  7-bit down counter                                    : 1
  9-bit up counter                                      : 1
-# Registers                                            : 49
- Flip-Flops                                            : 49
+# Registers                                            : 71
+ Flip-Flops                                            : 71
 # Multiplexers                                         : 2
  12-bit 2-to-1 multiplexer                             : 2
 
@@ -264,14 +306,90 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1710 - FF/Latch <shift_out_0> (without init value) has a constant value of 0 in block <SPI_to_USB>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_1> (without init value) has a constant value of 0 in block <SPI_to_USB>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_2> (without init value) has a constant value of 0 in block <SPI_to_USB>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_3> (without init value) has a constant value of 0 in block <SPI_to_USB>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_4> (without init value) has a constant value of 0 in block <SPI_to_USB>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_5> (without init value) has a constant value of 0 in block <SPI_to_USB>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_6> (without init value) has a constant value of 0 in block <SPI_to_USB>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_7> (without init value) has a constant value of 0 in block <SPI_to_USB>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_8> (without init value) has a constant value of 0 in block <SPI_to_USB>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_9> (without init value) has a constant value of 0 in block <SPI_to_USB>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_10> (without init value) has a constant value of 0 in block <SPI_to_USB>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_11> (without init value) has a constant value of 0 in block <SPI_to_USB>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_12> (without init value) has a constant value of 0 in block <SPI_to_USB>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_13> (without init value) has a constant value of 0 in block <SPI_to_USB>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_14> (without init value) has a constant value of 0 in block <SPI_to_USB>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <shift_out_15> (without init value) has a constant value of 0 in block <SPI_to_USB>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <cs_sync_0> is unconnected in block <SPI_to_USB>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <cs_sync_1> is unconnected in block <SPI_to_USB>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <sclk_sync_2> is unconnected in block <SPI_to_USB>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <sclk_sync_0> is unconnected in block <SPI_to_USB>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <sclk_sync_1> is unconnected in block <SPI_to_USB>.
+INFO:Xst:1901 - Instance clock_manager/pll_base_inst in unit clock_manager/pll_base_inst of type PLL_BASE has been replaced by PLL_ADV
 
 Optimizing unit <Top_Module> ...
 
 Optimizing unit <ADC_control> ...
+WARNING:Xst:2677 - Node <ADC1/sdata_cntr_4> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/sdata_cntr_3> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/sdata_cntr_1> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/sdata_cntr_0> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/sdata_cntr_2> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_11> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_10> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_9> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_8> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_7> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_6> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_5> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_4> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_3> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_2> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_1> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_0> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata1_11> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata1_10> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata1_9> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata1_8> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata1_7> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata1_6> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata1_5> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata1_4> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata1_3> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata1_2> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata1_1> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata1_0> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_11> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_10> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_9> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_8> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_7> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_6> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_5> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_4> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_3> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_2> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_1> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_0> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in1_11> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in1_10> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in1_9> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in1_8> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in1_7> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in1_6> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in1_5> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in1_4> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in1_3> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in1_2> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in1_1> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in1_0> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/new_Data> of sequential type is unconnected in block <Top_Module>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block Top_Module, actual ratio is 1.
+Found area constraint ratio of 100 (+ 5) on block Top_Module, actual ratio is 0.
 
 Final Macro Processing ...
 
@@ -279,8 +397,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 78
- Flip-Flops                                            : 78
+# Registers                                            : 25
+ Flip-Flops                                            : 25
 
 =========================================================================
 
@@ -303,33 +421,29 @@ Top Level Output File Name         : Top_Module.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 91
+# BELS                             : 57
 #      GND                         : 1
-#      INV                         : 3
-#      LUT1                        : 8
-#      LUT2                        : 4
-#      LUT3                        : 8
-#      LUT4                        : 5
-#      LUT5                        : 10
-#      LUT6                        : 34
+#      INV                         : 2
+#      LUT2                        : 3
+#      LUT3                        : 12
+#      LUT4                        : 9
+#      LUT5                        : 6
+#      LUT6                        : 6
 #      MUXCY                       : 8
 #      VCC                         : 1
 #      XORCY                       : 9
-# FlipFlops/Latches                : 81
-#      FD                          : 14
+# FlipFlops/Latches                : 28
+#      FD                          : 11
 #      FDC                         : 14
-#      FDCE                        : 24
-#      FDE                         : 24
-#      FDRE                        : 2
 #      ODDR2                       : 3
-# Clock Buffers                    : 2
-#      BUFG                        : 2
-# IO Buffers                       : 32
-#      IBUF                        : 3
+# Clock Buffers                    : 3
+#      BUFG                        : 3
+# IO Buffers                       : 8
+#      IBUF                        : 1
 #      IBUFG                       : 1
-#      OBUF                        : 28
-# DCMs                             : 1
-#      DCM_SP                      : 1
+#      OBUF                        : 6
+# Others                           : 1
+#      PLL_ADV                     : 1
 
 Device utilization summary:
 ---------------------------
@@ -338,23 +452,24 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              81  out of  18224     0%  
- Number of Slice LUTs:                   72  out of   9112     0%  
-    Number used as Logic:                72  out of   9112     0%  
+ Number of Slice Registers:              28  out of  18224     0%  
+ Number of Slice LUTs:                   38  out of   9112     0%  
+    Number used as Logic:                38  out of   9112     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     96
-   Number with an unused Flip Flop:      15  out of     96    15%  
-   Number with an unused LUT:            24  out of     96    25%  
-   Number of fully used LUT-FF pairs:    57  out of     96    59%  
-   Number of unique control sets:         8
+ Number of LUT Flip Flop pairs used:     41
+   Number with an unused Flip Flop:      13  out of     41    31%  
+   Number with an unused LUT:             3  out of     41     7%  
+   Number of fully used LUT-FF pairs:    25  out of     41    60%  
+   Number of unique control sets:         4
 
 IO Utilization: 
- Number of IOs:                          32
- Number of bonded IOBs:                  32  out of    232    13%  
+ Number of IOs:                          12
+ Number of bonded IOBs:                   8  out of    232     3%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+ Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
+ Number of PLL_ADVs:                      1  out of      2    50%  
 
 ---------------------------
 Partition Resource Summary:
@@ -378,8 +493,8 @@ Clock Information:
 Clock Signal                             | Clock buffer(FF name)         | Load  |
 -----------------------------------------+-------------------------------+-------+
 sensor_clk_int_inv(sensor_clk_int_inv1:O)| NONE(*)(sample_control/cntr_0)| 10    |
-fpga_clk                                 | DCM_SP:CLKFX                  | 63    |
-ADC1/_n0102_inv1(ADC1/_n0102_inv11:O)    | NONE(*)(clock_forward_inst_3) | 1     |
+clock_manager/pll_base_inst/CLKOUT1      | BUFG                          | 10    |
+ADC1/_n01041(ADC1/_n010411:O)            | NONE(*)(clock_forward_inst_3) | 1     |
 cs_int(ADC1/chip_select<2>1:O)           | NONE(*)(clock_forward_inst_3) | 1     |
 sensor_clk_int(scd/sensor_clk<4>1:O)     | NONE(*)(clock_forward_inst_2) | 9     |
 -----------------------------------------+-------------------------------+-------+
@@ -396,8 +511,8 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 3.383ns (Maximum Frequency: 295.565MHz)
-   Minimum input arrival time before clock: 5.596ns
+   Minimum period: 5.334ns (Maximum Frequency: 187.459MHz)
+   Minimum input arrival time before clock: 2.609ns
    Maximum output required time after clock: 5.733ns
    Maximum combinational path delay: No path found
 
@@ -407,10 +522,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'sensor_clk_int_inv'
-  Clock period: 3.383ns (frequency: 295.565MHz)
-  Total number of paths / destination ports: 142 / 9
+  Clock period: 4.220ns (frequency: 236.953MHz)
+  Total number of paths / destination ports: 531 / 9
 -------------------------------------------------------------------------
-Delay:               3.383ns (Levels of Logic = 11)
+Delay:               4.220ns (Levels of Logic = 12)
   Source:            sample_control/cntr_2 (FF)
   Destination:       sample_control/cntr_8 (FF)
   Source Clock:      sensor_clk_int_inv rising
@@ -422,8 +537,9 @@ Delay:               3.383ns (Levels of Logic = 11)
     ----------------------------------------  ------------
      FDC:C->Q              3   0.447   0.898  sample_control/cntr_2 (sample_control/cntr_2)
      LUT4:I0->O            2   0.203   0.617  sample_control/GND_2_o_GND_2_o_equal_1_o_inv_SW0 (N01)
-     LUT6:I5->O            1   0.205   0.579  sample_control/GND_2_o_GND_2_o_equal_1_o_inv (sample_control/GND_2_o_GND_2_o_equal_1_o_inv)
-     MUXCY:CI->O           1   0.019   0.000  sample_control/Mcount_cntr_cy<0> (sample_control/Mcount_cntr_cy<0>)
+     LUT6:I5->O            9   0.205   1.058  sample_control/GND_2_o_GND_2_o_equal_1_o<8> (sample_control/GND_2_o_GND_2_o_equal_1_o)
+     LUT3:I0->O            1   0.205   0.000  sample_control/Mcount_cntr_lut<0> (sample_control/Mcount_cntr_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  sample_control/Mcount_cntr_cy<0> (sample_control/Mcount_cntr_cy<0>)
      MUXCY:CI->O           1   0.019   0.000  sample_control/Mcount_cntr_cy<1> (sample_control/Mcount_cntr_cy<1>)
      MUXCY:CI->O           1   0.019   0.000  sample_control/Mcount_cntr_cy<2> (sample_control/Mcount_cntr_cy<2>)
      MUXCY:CI->O           1   0.019   0.000  sample_control/Mcount_cntr_cy<3> (sample_control/Mcount_cntr_cy<3>)
@@ -434,61 +550,60 @@ Delay:               3.383ns (Levels of Logic = 11)
      XORCY:CI->O           1   0.180   0.000  sample_control/Mcount_cntr_xor<8> (sample_control/Mcount_cntr8)
      FDC:D                     0.102          sample_control/cntr_8
     ----------------------------------------
-    Total                      3.383ns (1.289ns logic, 2.094ns route)
-                                       (38.1% logic, 61.9% route)
+    Total                      4.220ns (1.647ns logic, 2.573ns route)
+                                       (39.0% logic, 61.0% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'fpga_clk'
-  Clock period: 2.115ns (frequency: 472.862MHz)
-  Total number of paths / destination ports: 644 / 111
+Timing constraint: Default period analysis for Clock 'clock_manager/pll_base_inst/CLKOUT1'
+  Clock period: 5.334ns (frequency: 187.459MHz)
+  Total number of paths / destination ports: 39 / 8
 -------------------------------------------------------------------------
-Delay:               5.287ns (Levels of Logic = 3)
-  Source:            ADC1/cs_delay_2 (FF)
-  Destination:       ADC1/sdata_cntr_3 (FF)
-  Source Clock:      fpga_clk falling 0.2X
-  Destination Clock: fpga_clk rising 0.2X
+Delay:               2.667ns (Levels of Logic = 2)
+  Source:            scd/cntr_4 (FF)
+  Destination:       ADC1/cs_delay_2 (FF)
+  Source Clock:      clock_manager/pll_base_inst/CLKOUT1 rising
+  Destination Clock: clock_manager/pll_base_inst/CLKOUT1 falling
 
-  Data Path: ADC1/cs_delay_2 to ADC1/sdata_cntr_3
+  Data Path: scd/cntr_4 to ADC1/cs_delay_2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               6   0.447   0.973  ADC1/cs_delay_2 (ADC1/cs_delay_2)
-     LUT3:I0->O            3   0.205   1.015  ADC1/_n0102_inv11 (ADC1/_n0102_inv1)
-     LUT6:I0->O           25   0.203   1.193  ADC1/Mcount_sdata_cntr_val11 (ADC1/Mcount_sdata_cntr_val1)
-     LUT2:I1->O            2   0.205   0.616  ADC1/Mcount_sdata_cntr_val1 (ADC1/Mcount_sdata_cntr_val)
-     FDRE:R                    0.430          ADC1/sdata_cntr_2
+     FDC:C->Q              5   0.447   1.059  scd/cntr_4 (scd/cntr_4)
+     LUT6:I1->O            3   0.203   0.651  ADC1/delay_en_sensor_clk_AND_1_o1 (ADC1/delay_en_sensor_clk_AND_1_o)
+     LUT4:I3->O            1   0.205   0.000  ADC1/cs_delay_2_glue_set (ADC1/cs_delay_2_glue_set)
+     FD:D                      0.102          ADC1/cs_delay_2
     ----------------------------------------
-    Total                      5.287ns (1.490ns logic, 3.797ns route)
-                                       (28.2% logic, 71.8% route)
+    Total                      2.667ns (0.957ns logic, 1.710ns route)
+                                       (35.9% logic, 64.1% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'sensor_clk_int'
-  Clock period: 2.624ns (frequency: 381.127MHz)
+  Clock period: 2.734ns (frequency: 365.724MHz)
   Total number of paths / destination ports: 36 / 8
 -------------------------------------------------------------------------
-Delay:               2.624ns (Levels of Logic = 2)
-  Source:            ADC1/cntr_2 (FF)
-  Destination:       ADC1/cntr_5 (FF)
+Delay:               2.734ns (Levels of Logic = 2)
+  Source:            ADC1/cntr_0 (FF)
+  Destination:       ADC1/cntr_6 (FF)
   Source Clock:      sensor_clk_int rising
   Destination Clock: sensor_clk_int rising
 
-  Data Path: ADC1/cntr_2 to ADC1/cntr_5
+  Data Path: ADC1/cntr_0 to ADC1/cntr_6
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               4   0.447   0.912  ADC1/cntr_2 (ADC1/cntr_2)
-     LUT3:I0->O            3   0.205   0.755  ADC1/Mcount_cntr311 (ADC1/Mcount_cntr3_bdd0)
-     LUT5:I3->O            1   0.203   0.000  ADC1/cntr_5_glue_set (ADC1/cntr_5_glue_set)
-     FD:D                      0.102          ADC1/cntr_5
+     FD:C->Q               6   0.447   0.992  ADC1/cntr_0 (ADC1/cntr_0)
+     LUT4:I0->O            4   0.203   0.788  ADC1/Mcount_cntr411 (ADC1/Mcount_cntr4_bdd0)
+     LUT6:I4->O            1   0.203   0.000  ADC1/delay_en_rstpot (ADC1/delay_en_rstpot)
+     FD:D                      0.102          ADC1/delay_en
     ----------------------------------------
-    Total                      2.624ns (0.957ns logic, 1.667ns route)
-                                       (36.5% logic, 63.5% route)
+    Total                      2.734ns (0.955ns logic, 1.779ns route)
+                                       (34.9% logic, 65.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'sensor_clk_int_inv'
   Total number of paths / destination ports: 9 / 9
 -------------------------------------------------------------------------
-Offset:              3.128ns (Levels of Logic = 1)
+Offset:              2.609ns (Levels of Logic = 1)
   Source:            reset (PAD)
   Destination:       sample_control/cntr_0 (FF)
   Destination Clock: sensor_clk_int_inv rising
@@ -497,51 +612,30 @@ Offset:              3.128ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            45   1.222   1.476  reset_IBUF (reset_IBUF)
+     IBUF:I->O            14   1.222   0.957  reset_IBUF (reset_IBUF)
      FDC:CLR                   0.430          sample_control/cntr_0
     ----------------------------------------
-    Total                      3.128ns (1.652ns logic, 1.476ns route)
-                                       (52.8% logic, 47.2% route)
+    Total                      2.609ns (1.652ns logic, 0.957ns route)
+                                       (63.3% logic, 36.7% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'fpga_clk'
-  Total number of paths / destination ports: 65 / 62
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_manager/pll_base_inst/CLKOUT1'
+  Total number of paths / destination ports: 5 / 5
 -------------------------------------------------------------------------
-Offset:              5.596ns (Levels of Logic = 3)
+Offset:              2.609ns (Levels of Logic = 1)
   Source:            reset (PAD)
-  Destination:       ADC1/pdata2_11 (FF)
-  Destination Clock: fpga_clk rising 0.2X
+  Destination:       scd/cntr_0 (FF)
+  Destination Clock: clock_manager/pll_base_inst/CLKOUT1 rising
 
-  Data Path: reset to ADC1/pdata2_11
+  Data Path: reset to scd/cntr_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            45   1.222   1.821  reset_IBUF (reset_IBUF)
-     LUT5:I0->O            3   0.203   0.651  ADC1/_n0115_inv11 (ADC1/_n0115_inv1)
-     LUT3:I2->O           24   0.205   1.172  ADC1/_n0115_inv1 (ADC1/_n0115_inv)
-     FDE:CE                    0.322          ADC1/pdata1_0
+     IBUF:I->O            14   1.222   0.957  reset_IBUF (reset_IBUF)
+     FDC:CLR                   0.430          scd/cntr_0
     ----------------------------------------
-    Total                      5.596ns (1.952ns logic, 3.644ns route)
-                                       (34.9% logic, 65.1% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'fpga_clk'
-  Total number of paths / destination ports: 24 / 24
--------------------------------------------------------------------------
-Offset:              3.597ns (Levels of Logic = 1)
-  Source:            ADC1/pdata1_11 (FF)
-  Destination:       Data1<11> (PAD)
-  Source Clock:      fpga_clk rising 0.2X
-
-  Data Path: ADC1/pdata1_11 to Data1<11>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDE:C->Q              1   0.447   0.579  ADC1/pdata1_11 (ADC1/pdata1_11)
-     OBUF:I->O                 2.571          Data1_11_OBUF (Data1<11>)
-    ----------------------------------------
-    Total                      3.597ns (3.018ns logic, 0.579ns route)
-                                       (83.9% logic, 16.1% route)
+    Total                      2.609ns (1.652ns logic, 0.957ns route)
+                                       (63.3% logic, 36.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'sensor_clk_int_inv'
@@ -565,26 +659,47 @@ Offset:              5.733ns (Levels of Logic = 3)
                                        (59.8% logic, 40.2% route)
 
 =========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'sensor_clk_int'
+  Total number of paths / destination ports: 7 / 1
+-------------------------------------------------------------------------
+Offset:              5.680ns (Levels of Logic = 3)
+  Source:            ADC1/cntr_0 (FF)
+  Destination:       interrupt (PAD)
+  Source Clock:      sensor_clk_int rising
+
+  Data Path: ADC1/cntr_0 to interrupt
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               6   0.447   0.992  ADC1/cntr_0 (ADC1/cntr_0)
+     LUT4:I0->O            4   0.203   0.684  ADC1/Mcount_cntr411 (ADC1/Mcount_cntr4_bdd0)
+     LUT4:I3->O            1   0.205   0.579  ADC1/interrupt1 (interrupt_OBUF)
+     OBUF:I->O                 2.571          interrupt_OBUF (interrupt)
+    ----------------------------------------
+    Total                      5.680ns (3.426ns logic, 2.254ns route)
+                                       (60.3% logic, 39.7% route)
+
+=========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock fpga_clk
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-fpga_clk       |    4.673|    5.287|    3.144|         |
-sensor_clk_int |         |         |    1.780|         |
----------------+---------+---------+---------+---------+
+Clock to Setup on destination clock clock_manager/pll_base_inst/CLKOUT1
+-----------------------------------+---------+---------+---------+---------+
+                                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------------+---------+---------+---------+---------+
+clock_manager/pll_base_inst/CLKOUT1|    2.135|         |    2.667|         |
+sensor_clk_int                     |         |         |    2.590|         |
+-----------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock sensor_clk_int
 ------------------+---------+---------+---------+---------+
                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------+---------+---------+---------+---------+
-sensor_clk_int    |    2.624|         |         |         |
-sensor_clk_int_inv|    3.832|         |         |         |
+sensor_clk_int    |    2.734|         |         |         |
+sensor_clk_int_inv|    3.572|         |         |         |
 ------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock sensor_clk_int_inv
@@ -592,20 +707,20 @@ Clock to Setup on destination clock sensor_clk_int_inv
                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------+---------+---------+---------+---------+
-sensor_clk_int_inv|    3.383|         |         |         |
+sensor_clk_int_inv|    4.220|         |         |         |
 ------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.50 secs
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 7.14 secs
  
 --> 
 
-Total memory usage is 258764 kilobytes
+Total memory usage is 259236 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    3 (   0 filtered)
-Number of infos    :    3 (   0 filtered)
+Number of warnings :  104 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
 

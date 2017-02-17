@@ -36,3 +36,164 @@ map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -re
 par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
 trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
 bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 
+xst -intstyle ise -ifn "R:/MQP/MQP_slx16/Top_Module.xst" -ofn "R:/MQP/MQP_slx16/Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc MQP.ucf -p xc6slx16-csg324-3 Top_Module.ngc Top_Module.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Top_Module_map.ncd Top_Module.ngd Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Top_Module.twx Top_Module.ncd -o Top_Module.twr Top_Module.pcf -ucf MQP.ucf 
+bitgen -intstyle ise -f Top_Module.ut Top_Module.ncd 

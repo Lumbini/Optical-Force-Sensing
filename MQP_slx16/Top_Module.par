@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-AK113-08::  Tue Dec 13 21:37:16 2016
+85P-AIM-16::  Thu Feb 16 19:47:05 2017
 
 par -w -intstyle ise -ol high -mt off Top_Module_map.ncd Top_Module.ncd
 Top_Module.pcf 
@@ -11,7 +11,7 @@ Constraints file: Top_Module.pcf.
 Loading device for application Rf_Device from file '6slx16.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
    "Top_Module" is an NCD, version 3.2, device xc6slx16, package csg324, speed -3
 vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to '2100@XILINX.wpi.edu'.
+INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to '2100@xilinx.wpi.edu'.
 INFO:Security:53 - The LM_LICENSE_FILE environment variable is not set.
 INFO:Security:54 - 'xc6slx16' is a WebPack part.
 WARNING:Security:43 - No license file was found in the standard Xilinx license directory.
@@ -35,30 +35,26 @@ Device speed data version:  "PRODUCTION 1.23 2013-10-13".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                    78 out of  18,224    1%
-    Number used as Flip Flops:                  78
+  Number of Slice Registers:                    25 out of  18,224    1%
+    Number used as Flip Flops:                  25
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                         61 out of   9,112    1%
-    Number used as logic:                       60 out of   9,112    1%
-      Number using O6 output only:              43
-      Number using O5 output only:               7
-      Number using O5 and O6:                   10
+  Number of Slice LUTs:                         28 out of   9,112    1%
+    Number used as logic:                       28 out of   9,112    1%
+      Number using O6 output only:              11
+      Number using O5 output only:               0
+      Number using O5 and O6:                   17
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   2,176    0%
-    Number used exclusively as route-thrus:      1
-      Number with same-slice register load:      0
-      Number with same-slice carry load:         1
-      Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    25 out of   2,278    1%
+  Number of occupied Slices:                    11 out of   2,278    1%
   Number of MUXCYs used:                        12 out of   4,556    1%
-  Number of LUT Flip Flop pairs used:           85
-    Number with an unused Flip Flop:            12 out of      85   14%
-    Number with an unused LUT:                  24 out of      85   28%
-    Number of fully used LUT-FF pairs:          49 out of      85   57%
+  Number of LUT Flip Flop pairs used:           28
+    Number with an unused Flip Flop:             7 out of      28   25%
+    Number with an unused LUT:                   0 out of      28    0%
+    Number of fully used LUT-FF pairs:          21 out of      28   75%
     Number of slice register sites lost
       to control set restrictions:               0 out of  18,224    0%
 
@@ -69,8 +65,8 @@ Slice Logic Distribution:
   over-mapped for a non-slice resource or if Placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                        32 out of     232   13%
-    Number of LOCed IOBs:                        5 out of      32   15%
+  Number of bonded IOBs:                        12 out of     232    5%
+    Number of LOCed IOBs:                       10 out of      12   83%
     IOB Flip Flops:                              3
 
 Specific Feature Utilization:
@@ -85,9 +81,7 @@ Specific Feature Utilization:
   Number of BUFG/BUFGMUXs:                       2 out of      16   12%
     Number used as BUFGs:                        2
     Number used as BUFGMUX:                      0
-  Number of DCM/DCM_CLKGENs:                     1 out of       4   25%
-    Number used as DCMs:                         1
-    Number used as DCM_CLKGENs:                  0
+  Number of DCM/DCM_CLKGENs:                     0 out of       4    0%
   Number of ILOGIC2/ISERDES2s:                   0 out of     248    0%
   Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     248    0%
   Number of OLOGIC2/OSERDES2s:                   3 out of     248    1%
@@ -101,7 +95,7 @@ Specific Feature Utilization:
   Number of ICAPs:                               0 out of       1    0%
   Number of MCBs:                                0 out of       2    0%
   Number of PCILOGICSEs:                         0 out of       2    0%
-  Number of PLL_ADVs:                            0 out of       2    0%
+  Number of PLL_ADVs:                            1 out of       2   50%
   Number of PMVs:                                0 out of       1    0%
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
@@ -113,16 +107,20 @@ Router effort level (-rl):    High
 Starting initial Timing Analysis.  REAL time: 3 secs 
 Finished initial Timing Analysis.  REAL time: 3 secs 
 
+WARNING:Par:288 - The signal SPI_clk_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal SPI_cs_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal serial_data1_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal serial_data2_IBUF has no load.  PAR will not attempt to route this signal.
 Starting Router
 
 
-Phase  1  : 428 unrouted;      REAL time: 3 secs 
+Phase  1  : 168 unrouted;      REAL time: 3 secs 
 
-Phase  2  : 368 unrouted;      REAL time: 3 secs 
+Phase  2  : 132 unrouted;      REAL time: 4 secs 
 
-Phase  3  : 132 unrouted;      REAL time: 3 secs 
+Phase  3  : 34 unrouted;      REAL time: 4 secs 
 
-Phase  4  : 132 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
+Phase  4  : 34 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
 
 Updating file: Top_Module.ncd with current fully routed design.
 
@@ -156,15 +154,15 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|             clk_20M | BUFGMUX_X3Y13| No   |   18 |  0.520     |  1.377      |
+|             clk_20M | BUFGMUX_X3Y13| No   |    4 |  0.481     |  1.377      |
 +---------------------+--------------+------+------+------------+-------------+
-|      sensor_clk_int |         Local|      |    5 |  1.526     |  2.038      |
+|        ADC1/_n01041 |         Local|      |    1 |  0.000     |  2.629      |
 +---------------------+--------------+------+------+------------+-------------+
-|  sensor_clk_int_inv |         Local|      |    4 |  1.676     |  2.159      |
+|              cs_int |         Local|      |    1 |  0.000     |  2.630      |
 +---------------------+--------------+------+------+------------+-------------+
-|    ADC1/_n0102_inv1 |         Local|      |    4 |  0.000     |  2.881      |
+|      sensor_clk_int |         Local|      |    4 |  1.368     |  1.927      |
 +---------------------+--------------+------+------+------------+-------------+
-|              cs_int |         Local|      |    1 |  0.000     |  2.731      |
+|  sensor_clk_int_inv |         Local|      |    4 |  1.032     |  1.748      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -186,12 +184,12 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  NET "clock_manager/clkin1" PERIOD = 10 ns | MINLOWPULSE |     4.660ns|     5.340ns|       0|           0
+  NET "clock_manager/clkin1" PERIOD = 10 ns | MINLOWPULSE |     6.666ns|     3.334ns|       0|           0
    HIGH 50%                                 |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  PERIOD analysis for net "clock_manager/cl | SETUP       |    20.107ns|     9.786ns|       0|           0
-  kfx" derived from  NET "clock_manager/clk | HOLD        |     0.392ns|            |       0|           0
-  in1" PERIOD = 10 ns HIGH 50%              |             |            |            |        |            
+  PERIOD analysis for net "clock_manager/cl | SETUP       |   122.783ns|     4.434ns|       0|           0
+  kout1" derived from  NET "clock_manager/c | HOLD        |     0.415ns|            |       0|           0
+  lkin1" PERIOD = 10 ns HIGH 50%            |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -205,8 +203,8 @@ Derived Constraints for clock_manager/clkin1
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|clock_manager/clkin1           |     10.000ns|      5.340ns|      1.957ns|            0|            0|            0|          644|
-| clock_manager/clkfx           |     50.000ns|      9.786ns|          N/A|            0|            0|          644|            0|
+|clock_manager/clkin1           |     10.000ns|      3.334ns|      0.177ns|            0|            0|            0|           39|
+| clock_manager/clkout1         |    250.000ns|      4.434ns|          N/A|            0|            0|           39|            0|
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 All constraints were met.
@@ -216,17 +214,19 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 17 secs 
+WARNING:Par:283 - There are 4 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+
+Total REAL time to PAR completion: 18 secs 
 Total CPU time to PAR completion: 5 secs 
 
-Peak Memory Usage:  375 MB
+Peak Memory Usage:  383 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.
 Timing: Completed - No errors found.
 
 Number of error messages: 0
-Number of warning messages: 0
+Number of warning messages: 6
 Number of info messages: 0
 
 Writing design to file Top_Module.ncd
