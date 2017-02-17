@@ -2,27 +2,27 @@ Command line:
    MQP_Test_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  62481
+     -socket  51135
 
-Tue Dec 13 17:15:54 2016
+Tue Dec 20 00:19:43 2016
 
 
- Elaboration Time: 0.078 sec
+ Elaboration Time: 0.218401 sec
 
- Current Memory Usage: 1473.68 Meg
+ Current Memory Usage: 1320.72 Meg
 
- Total Signals          : 139
- Total Nets             : 123
- Total Signal Drivers   : 103
- Total Blocks           : 19
- Total Primitive Blocks : 15
- Total Processes        : 231
- Total Traceable Variables  : 227
- Total Scalar Nets and Variables : 5409
+ Total Signals          : 204
+ Total Nets             : 257
+ Total Signal Drivers   : 126
+ Total Blocks           : 27
+ Total Primitive Blocks : 12
+ Total Processes        : 249
+ Total Traceable Variables  : 454
+ Total Scalar Nets and Variables : 8042
 
- Total Simulation Time: 11.1229 sec
+ Total Simulation Time: 8.26805 sec
 
- Current Memory Usage: 1001.78 Meg
+ Current Memory Usage: 691.536 Meg
 
-Tue Dec 13 17:17:29 2016
+Tue Dec 20 01:45:36 2016
 

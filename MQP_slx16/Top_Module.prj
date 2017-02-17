@@ -1,4 +1,5 @@
 verilog work "ipcore_dir/DCM_MQP.v"
+verilog work "SPI_to_USB.v"
 verilog work "Serial_Sample_Control.v"
 verilog work "sensor_clk_divider.v"
 verilog work "ADC_control.v"

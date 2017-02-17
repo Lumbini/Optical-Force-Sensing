@@ -28,7 +28,9 @@ module ADC_control(
     output ADC_clk,
     output chip_select,
     output reg [11:0] pdata1,
-    output reg [11:0] pdata2
+    output reg [11:0] pdata2,
+	 output reg new_Data,
+	 output interrupt
     );
 	 reg [6:0]cntr = 0;
 	 reg [4:0]sdata_cntr = 19;
@@ -41,6 +43,7 @@ module ADC_control(
 	 
 	 assign chip_select = (cs_delay == 4'd2);
     assign ADC_clk = clk_20M;
+	 assign interrupt = (cntr == 0);
 	 
 
 	//Enable ADC Sampling for 128 Sensor Clock Cycles
@@ -88,6 +91,7 @@ module ADC_control(
 				shift_in1 <= 16'b0;
 				shift_in2 <= 16'b0;
 				sdata_cntr <= sdata_cntr + 1'b1;
+				new_Data <= 1'b1;
 			end
 			else if(sdata_cntr == 5'd20)
 			begin
@@ -98,6 +102,7 @@ module ADC_control(
 				shift_in1 <= {shift_in1[10:0], Data1};
 				shift_in2 <= {shift_in2[10:0], Data2};
 				sdata_cntr <= sdata_cntr + 1'b1;
+				new_Data <= 1'b0;
 			end
 		end
 		

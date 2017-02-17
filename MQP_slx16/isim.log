@@ -2,7 +2,7 @@ ISim log file
 Running: R:\MQP\MQP_slx16\MQP_Test_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb R:/MQP/MQP_slx16/MQP_Test_isim_beh.wdb 
 ISim P.20131013 (signature 0x7708f090)
 ----------------------------------------------------------------------
-INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to '2100@XILINX.wpi.edu'.
+INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to '2100@xilinx.wpi.edu'.
 INFO:Security:53 - The LM_LICENSE_FILE environment variable is not set.
 WARNING:Security:43 - No license file was found in the standard Xilinx license directory.
 WARNING:Security:44 - Since no license file was found,
@@ -21,4 +21,3 @@ Time resolution is 1 ps
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 # run 1000.00us
-# run 6000.00us

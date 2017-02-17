@@ -2,9 +2,14 @@ NET "fpga_clk" LOC = V10;
 NET "fpga_clk" PERIOD = 10.0ns HIGH 50%;
 
 #inputs
+NET "serial_data1" LOC = V12;
+NET "serial_data2" LOC = N10;
+NET "SPI_cs"	LOC = G1;
+NET "SPI_clk"	LOC = J7;
 
 #outputs
-NET "SI1" 			LOC = K6;
-NET "sensor_clk" 	LOC = L3;
-NET "ADC_clk" 		LOC = G3;
-NET "chip_select" LOC = H3;
+NET "SI1" 			LOC = G11;
+NET "sensor_clk" 	LOC = G3;
+NET "ADC_clk" 		LOC = L3;
+NET "chip_select" LOC = K2;
+NET "SPI_MISO"		LOC = J6;

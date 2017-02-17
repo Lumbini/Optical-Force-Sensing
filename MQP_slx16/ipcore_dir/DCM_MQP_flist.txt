@@ -52,3 +52,4 @@ DCM_MQP\simulation\timing\vcs_session.tcl
 DCM_MQP\simulation\timing\wave.do
 DCM_MQP_flist.txt
 DCM_MQP_xmdf.tcl
+_xmsgs\pn_parser.xmsgs

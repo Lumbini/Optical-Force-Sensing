@@ -10,40 +10,36 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Tue Dec 13 21:37:06 2016
+Mapped Date    : Thu Feb 16 19:46:54 2017
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    4
 Slice Logic Utilization:
-  Number of Slice Registers:                    78 out of  18,224    1%
-    Number used as Flip Flops:                  78
+  Number of Slice Registers:                    25 out of  18,224    1%
+    Number used as Flip Flops:                  25
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                         61 out of   9,112    1%
-    Number used as logic:                       60 out of   9,112    1%
-      Number using O6 output only:              43
-      Number using O5 output only:               7
-      Number using O5 and O6:                   10
+  Number of Slice LUTs:                         28 out of   9,112    1%
+    Number used as logic:                       28 out of   9,112    1%
+      Number using O6 output only:              11
+      Number using O5 output only:               0
+      Number using O5 and O6:                   17
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   2,176    0%
-    Number used exclusively as route-thrus:      1
-      Number with same-slice register load:      0
-      Number with same-slice carry load:         1
-      Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    25 out of   2,278    1%
+  Number of occupied Slices:                    11 out of   2,278    1%
   Number of MUXCYs used:                        12 out of   4,556    1%
-  Number of LUT Flip Flop pairs used:           85
-    Number with an unused Flip Flop:            12 out of      85   14%
-    Number with an unused LUT:                  24 out of      85   28%
-    Number of fully used LUT-FF pairs:          49 out of      85   57%
-    Number of unique control sets:               8
+  Number of LUT Flip Flop pairs used:           28
+    Number with an unused Flip Flop:             7 out of      28   25%
+    Number with an unused LUT:                   0 out of      28    0%
+    Number of fully used LUT-FF pairs:          21 out of      28   75%
+    Number of unique control sets:               4
     Number of slice register sites lost
-      to control set restrictions:              26 out of  18,224    1%
+      to control set restrictions:              15 out of  18,224    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -52,8 +48,8 @@ Slice Logic Distribution:
   over-mapped for a non-slice resource or if Placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                        32 out of     232   13%
-    Number of LOCed IOBs:                        5 out of      32   15%
+  Number of bonded IOBs:                        12 out of     232    5%
+    Number of LOCed IOBs:                       10 out of      12   83%
     IOB Flip Flops:                              3
 
 Specific Feature Utilization:
@@ -68,9 +64,7 @@ Specific Feature Utilization:
   Number of BUFG/BUFGMUXs:                       2 out of      16   12%
     Number used as BUFGs:                        2
     Number used as BUFGMUX:                      0
-  Number of DCM/DCM_CLKGENs:                     1 out of       4   25%
-    Number used as DCMs:                         1
-    Number used as DCM_CLKGENs:                  0
+  Number of DCM/DCM_CLKGENs:                     0 out of       4    0%
   Number of ILOGIC2/ISERDES2s:                   0 out of     248    0%
   Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     248    0%
   Number of OLOGIC2/OSERDES2s:                   3 out of     248    1%
@@ -84,15 +78,15 @@ Specific Feature Utilization:
   Number of ICAPs:                               0 out of       1    0%
   Number of MCBs:                                0 out of       2    0%
   Number of PCILOGICSEs:                         0 out of       2    0%
-  Number of PLL_ADVs:                            0 out of       2    0%
+  Number of PLL_ADVs:                            1 out of       2   50%
   Number of PMVs:                                0 out of       1    0%
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                4.08
+Average Fanout of Non-Clock Nets:                2.71
 
-Peak Memory Usage:  414 MB
-Total REAL time to MAP completion:  7 secs 
+Peak Memory Usage:  423 MB
+Total REAL time to MAP completion:  8 secs 
 Total CPU time to MAP completion:   4 secs 
 
 Table of Contents
@@ -122,25 +116,32 @@ WARNING:Security:44 - Since no license file was found,
 WARNING:Security:42 - Your software subscription period has lapsed. Your current
 version of Xilinx tools will continue to function, but you no longer qualify for
 Xilinx software updates or new releases.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net ADC1/_n01041 is sourced by
+   a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net cs_int is sourced by a
+   combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net sensor_clk_int is sourced
    by a combinatorial pin. This is not good design practice. Use the CE pin to
    control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net sensor_clk_int_inv is
    sourced by a combinatorial pin. This is not good design practice. Use the CE
    pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net ADC1/_n0102_inv1 is sourced
-   by a combinatorial pin. This is not good design practice. Use the CE pin to
-   control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net cs_int is sourced by a
-   combinatorial pin. This is not good design practice. Use the CE pin to
-   control the loading of data into the flip-flop.
 
 Section 3 - Informational
 -------------------------
 INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to
-'2100@XILINX.wpi.edu'.
+'2100@xilinx.wpi.edu'.
 INFO:Security:53 - The LM_LICENSE_FILE environment variable is not set.
 INFO:Security:54 - 'xc6slx16' is a WebPack part.
+INFO:LIT:243 - Logical network serial_data1_IBUF has no load.
+INFO:LIT:395 - The above info message is repeated 3 more times for the following
+   (max. 5 shown):
+   serial_data2_IBUF,
+   SPI_clk_IBUF,
+   SPI_cs_IBUF
+   To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:MapLib:159 - Net Timing constraints on signal fpga_clk are pushed forward
    through input buffer.
@@ -153,20 +154,32 @@ INFO:Pack:1720 - Initializing voltage to 1.140 Volts. (default - Range: 1.140 to
    1.260 Volts)
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
-INFO:Place:834 - Only a subset of IOs are locked. Out of 32 IOs, 5 are locked
-   and 27 are not locked. If you would like to print the names of these IOs,
+INFO:Place:834 - Only a subset of IOs are locked. Out of 12 IOs, 10 are locked
+   and 2 are not locked. If you would like to print the names of these IOs,
    please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
 INFO:Pack:1650 - Map created a placed design.
-INFO:PhysDesignRules:1861 - To achieve optimal frequency synthesis performance
-   with the CLKFX and CLKFX180 outputs of the DCM comp
-   clock_manager/dcm_sp_inst, consult the device Data Sheet.
 
 Section 4 - Removed Logic Summary
 ---------------------------------
+   1 block(s) removed
    2 block(s) optimized away
+   1 signal(s) removed
 
 Section 5 - Removed Logic
 -------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+Loadless block "clock_manager/clkout1_buf" (CKBUF) removed.
+ The signal "clock_manager/clkout0" is loadless and has been removed.
 
 Optimized Block(s):
 TYPE 		BLOCK
@@ -184,33 +197,13 @@ Section 6 - IOB Properties
 |                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ADC_clk                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | ODDR         |          |          |
-| Data1<0>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data1<1>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data1<2>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data1<3>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data1<4>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data1<5>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data1<6>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data1<7>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data1<8>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data1<9>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data1<10>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data1<11>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data2<0>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data2<1>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data2<2>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data2<3>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data2<4>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data2<5>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data2<6>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data2<7>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data2<8>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data2<9>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data2<10>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| Data2<11>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | SI1                                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| SPI_MISO                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| SPI_clk                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| SPI_cs                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
 | chip_select                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | ODDR         |          |          |
 | fpga_clk                           | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| interrupt                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | reset                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
 | sensor_clk                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | ODDR         |          |          |
 | serial_data1                       | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
