@@ -1,0 +1,660 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.33 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.34 secs
+ 
+--> Reading design: Top_Module.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Top_Module.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Top_Module"
+Output Format                      : NGC
+Target Device                      : xc6slx9-2-tqg144
+
+---- Source Options
+Top Module Name                    : Top_Module
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\ipcore_dir\DCM_MQP.v" into library work
+Parsing module <DCM_MQP>.
+Analyzing Verilog file "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Serial_Sample_Control.v" into library work
+Parsing module <Serial_Sample_Control>.
+Analyzing Verilog file "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\sensor_clk_divider.v" into library work
+Parsing module <sensor_clk_divider>.
+Analyzing Verilog file "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\ADC_control.v" into library work
+Parsing module <ADC_control>.
+Analyzing Verilog file "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v" into library work
+Parsing module <Top_Module>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <Top_Module>.
+
+Elaborating module <IBUFDS(CAPACITANCE="DONT_CARE",DIFF_TERM="FALSE",IBUF_DELAY_VALUE="0",IFD_DELAY_VALUE="AUTO",IOSTANDARD="LVDS_33")>.
+WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v" Line 77: Assignment to fpga_clk ignored, since the identifier is never used
+
+Elaborating module <DCM_MQP>.
+
+Elaborating module <IBUFG>.
+
+Elaborating module <PLL_BASE(BANDWIDTH="OPTIMIZED",CLK_FEEDBACK="CLKFBOUT",COMPENSATION="SYSTEM_SYNCHRONOUS",DIVCLK_DIVIDE=1,CLKFBOUT_MULT=8,CLKFBOUT_PHASE=0.0,CLKOUT0_DIVIDE=8,CLKOUT0_PHASE=0.0,CLKOUT0_DUTY_CYCLE=0.5,CLKOUT1_DIVIDE=100,CLKOUT1_PHASE=0.0,CLKOUT1_DUTY_CYCLE=0.5,CLKIN_PERIOD=20.0,REF_JITTER=0.01)>.
+WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\ipcore_dir\DCM_MQP.v" Line 121: Assignment to clkout2_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\ipcore_dir\DCM_MQP.v" Line 122: Assignment to clkout3_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\ipcore_dir\DCM_MQP.v" Line 123: Assignment to clkout4_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\ipcore_dir\DCM_MQP.v" Line 124: Assignment to clkout5_unused ignored, since the identifier is never used
+
+Elaborating module <BUFG>.
+WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v" Line 87: Assignment to clk_50M ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v" Line 91: Assignment to lock ignored, since the identifier is never used
+
+Elaborating module <Serial_Sample_Control>.
+
+Elaborating module <sensor_clk_divider>.
+
+Elaborating module <ADC_control>.
+WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v" Line 107: Assignment to SET1_pdata0 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v" Line 108: Assignment to SET1_pdata1 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v" Line 109: Assignment to SET1_New_DATA_Pulse ignored, since the identifier is never used
+
+Elaborating module <ODDR2(DDR_ALIGNMENT="NONE",INIT=1'b0,SRTYPE="SYNC")>.
+WARNING:HDLCompiler:634 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v" Line 122: Net <ADC_Internal_clk> does not have a driver.
+WARNING:HDLCompiler:634 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v" Line 152: Net <ADC_Internal_CS> does not have a driver.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <Top_Module>.
+    Related source file is "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v".
+INFO:Xst:3210 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v" line 83: Output port <CLK_OUT1> of the instance <Global_Clock_Manager> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v" line 83: Output port <LOCKED> of the instance <Global_Clock_Manager> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v" line 98: Output port <pdata1> of the instance <SET1_ADC_Controller> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v" line 98: Output port <pdata2> of the instance <SET1_ADC_Controller> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v" line 98: Output port <new_Data> of the instance <SET1_ADC_Controller> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <ADC_Internal_clk> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ADC_Internal_CS> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	no macro.
+Unit <Top_Module> synthesized.
+
+Synthesizing Unit <DCM_MQP>.
+    Related source file is "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\ipcore_dir\DCM_MQP.v".
+    Summary:
+	no macro.
+Unit <DCM_MQP> synthesized.
+
+Synthesizing Unit <Serial_Sample_Control>.
+    Related source file is "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Serial_Sample_Control.v".
+    Found 9-bit register for signal <cntr>.
+    Found 9-bit adder for signal <cntr[8]_GND_7_o_add_1_OUT> created at line 37.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   9 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Serial_Sample_Control> synthesized.
+
+Synthesizing Unit <sensor_clk_divider>.
+    Related source file is "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\sensor_clk_divider.v".
+    Found 5-bit register for signal <cntr>.
+    Found 5-bit adder for signal <cntr[4]_GND_8_o_add_2_OUT> created at line 39.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   5 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <sensor_clk_divider> synthesized.
+
+Synthesizing Unit <ADC_control>.
+    Related source file is "\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\ADC_control.v".
+    Found 12-bit register for signal <shift_in1>.
+    Found 12-bit register for signal <shift_in2>.
+    Found 1-bit register for signal <delay_en>.
+    Found 3-bit register for signal <cs_delay>.
+    Found 5-bit register for signal <sdata_cntr>.
+    Found 12-bit register for signal <pdata1>.
+    Found 12-bit register for signal <pdata2>.
+    Found 1-bit register for signal <new_Data>.
+    Found 7-bit register for signal <cntr>.
+    Found 7-bit subtractor for signal <cntr[6]_GND_9_o_sub_4_OUT> created at line 60.
+    Found 3-bit subtractor for signal <cs_delay[2]_GND_9_o_sub_10_OUT> created at line 70.
+    Found 5-bit adder for signal <sdata_cntr[4]_GND_9_o_add_16_OUT> created at line 101.
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  65 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+Unit <ADC_control> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 5
+ 3-bit subtractor                                      : 1
+ 5-bit adder                                           : 2
+ 7-bit subtractor                                      : 1
+ 9-bit adder                                           : 1
+# Registers                                            : 11
+ 1-bit register                                        : 2
+ 12-bit register                                       : 4
+ 3-bit register                                        : 1
+ 5-bit register                                        : 2
+ 7-bit register                                        : 1
+ 9-bit register                                        : 1
+# Multiplexers                                         : 6
+ 12-bit 2-to-1 multiplexer                             : 2
+ 3-bit 2-to-1 multiplexer                              : 1
+ 5-bit 2-to-1 multiplexer                              : 1
+ 7-bit 2-to-1 multiplexer                              : 1
+ 9-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <ADC_control>.
+The following registers are absorbed into counter <cs_delay>: 1 register on signal <cs_delay>.
+The following registers are absorbed into counter <sdata_cntr>: 1 register on signal <sdata_cntr>.
+The following registers are absorbed into counter <cntr>: 1 register on signal <cntr>.
+Unit <ADC_control> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Serial_Sample_Control>.
+The following registers are absorbed into counter <cntr>: 1 register on signal <cntr>.
+Unit <Serial_Sample_Control> synthesized (advanced).
+
+Synthesizing (advanced) Unit <sensor_clk_divider>.
+The following registers are absorbed into counter <cntr>: 1 register on signal <cntr>.
+Unit <sensor_clk_divider> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 5
+ 3-bit down counter                                    : 1
+ 5-bit up counter                                      : 2
+ 7-bit down counter                                    : 1
+ 9-bit up counter                                      : 1
+# Registers                                            : 50
+ Flip-Flops                                            : 50
+# Multiplexers                                         : 2
+ 12-bit 2-to-1 multiplexer                             : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:1901 - Instance Global_Clock_Manager/pll_base_inst in unit Global_Clock_Manager/pll_base_inst of type PLL_BASE has been replaced by PLL_ADV
+
+Optimizing unit <Top_Module> ...
+
+Optimizing unit <ADC_control> ...
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/sdata_cntr_4> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/sdata_cntr_3> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/sdata_cntr_1> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/sdata_cntr_0> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/sdata_cntr_2> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata2_11> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata2_10> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata2_9> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata2_8> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata2_7> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata2_6> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata2_5> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata2_4> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata2_3> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata2_2> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata2_1> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata2_0> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata1_11> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata1_10> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata1_9> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata1_8> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata1_7> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata1_6> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata1_5> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata1_4> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata1_3> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata1_2> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata1_1> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/pdata1_0> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in2_11> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in2_10> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in2_9> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in2_8> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in2_7> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in2_6> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in2_5> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in2_4> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in2_3> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in2_2> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in2_1> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in2_0> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in1_11> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in1_10> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in1_9> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in1_8> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in1_7> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in1_6> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in1_5> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in1_4> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in1_3> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in1_2> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in1_1> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/shift_in1_0> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <SET1_ADC_Controller/new_Data> of sequential type is unconnected in block <Top_Module>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Top_Module, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 25
+ Flip-Flops                                            : 25
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : Top_Module.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 56
+#      GND                         : 1
+#      INV                         : 2
+#      LUT2                        : 4
+#      LUT3                        : 12
+#      LUT4                        : 6
+#      LUT5                        : 6
+#      LUT6                        : 7
+#      MUXCY                       : 8
+#      VCC                         : 1
+#      XORCY                       : 9
+# FlipFlops/Latches                : 28
+#      FD                          : 11
+#      FDC                         : 14
+#      ODDR2                       : 3
+# Clock Buffers                    : 3
+#      BUFG                        : 3
+# IO Buffers                       : 7
+#      IBUF                        : 1
+#      IBUFDS                      : 1
+#      IBUFG                       : 1
+#      OBUF                        : 4
+# Others                           : 1
+#      PLL_ADV                     : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9tqg144-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              28  out of  11440     0%  
+ Number of Slice LUTs:                   37  out of   5720     0%  
+    Number used as Logic:                37  out of   5720     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     40
+   Number with an unused Flip Flop:      12  out of     40    30%  
+   Number with an unused LUT:             3  out of     40     7%  
+   Number of fully used LUT-FF pairs:    25  out of     40    62%  
+   Number of unique control sets:         4
+
+IO Utilization: 
+ Number of IOs:                           9
+ Number of bonded IOBs:                   6  out of    102     5%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
+ Number of PLL_ADVs:                      1  out of      2    50%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-------------------------------------------------------+------------------------------------+-------+
+Clock Signal                                           | Clock buffer(FF name)              | Load  |
+-------------------------------------------------------+------------------------------------+-------+
+Sensor1_Internal_clk_inv(Sensor1_Internal_clk_inv1:O)  | NONE(*)(SET1_sample_control/cntr_0)| 10    |
+Global_Clock_Manager/pll_base_inst/CLKOUT1             | BUFG                               | 9     |
+Sensor1_Internal_clk(SET1_SCD/sensor_clk<4>1:O)        | NONE(*)(Sensor1_clk_forward)       | 9     |
+ADC_Internal_CS                                        | NONE(ADC1_clk_forward)             | 2     |
+ADC1_Internal_CS_INV_18_o(ADC1_Internal_CS_INV_18_o1:O)| NONE(*)(ADC1_CS_forward)           | 1     |
+-------------------------------------------------------+------------------------------------+-------+
+(*) These 3 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 6.288ns (Maximum Frequency: 159.033MHz)
+   Minimum input arrival time before clock: 2.913ns
+   Maximum output required time after clock: 6.644ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Sensor1_Internal_clk_inv'
+  Clock period: 5.002ns (frequency: 199.930MHz)
+  Total number of paths / destination ports: 531 / 9
+-------------------------------------------------------------------------
+Delay:               5.002ns (Levels of Logic = 12)
+  Source:            SET1_sample_control/cntr_2 (FF)
+  Destination:       SET1_sample_control/cntr_8 (FF)
+  Source Clock:      Sensor1_Internal_clk_inv rising
+  Destination Clock: Sensor1_Internal_clk_inv rising
+
+  Data Path: SET1_sample_control/cntr_2 to SET1_sample_control/cntr_8
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.525   1.042  SET1_sample_control/cntr_2 (SET1_sample_control/cntr_2)
+     LUT4:I0->O            2   0.254   0.834  SET1_sample_control/GND_7_o_GND_7_o_equal_1_o_inv_SW0 (N01)
+     LUT6:I4->O            9   0.250   1.204  SET1_sample_control/GND_7_o_GND_7_o_equal_1_o<8> (SET1_sample_control/GND_7_o_GND_7_o_equal_1_o)
+     LUT3:I0->O            1   0.235   0.000  SET1_sample_control/Mcount_cntr_lut<0> (SET1_sample_control/Mcount_cntr_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  SET1_sample_control/Mcount_cntr_cy<0> (SET1_sample_control/Mcount_cntr_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  SET1_sample_control/Mcount_cntr_cy<1> (SET1_sample_control/Mcount_cntr_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  SET1_sample_control/Mcount_cntr_cy<2> (SET1_sample_control/Mcount_cntr_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  SET1_sample_control/Mcount_cntr_cy<3> (SET1_sample_control/Mcount_cntr_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  SET1_sample_control/Mcount_cntr_cy<4> (SET1_sample_control/Mcount_cntr_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  SET1_sample_control/Mcount_cntr_cy<5> (SET1_sample_control/Mcount_cntr_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  SET1_sample_control/Mcount_cntr_cy<6> (SET1_sample_control/Mcount_cntr_cy<6>)
+     MUXCY:CI->O           0   0.023   0.000  SET1_sample_control/Mcount_cntr_cy<7> (SET1_sample_control/Mcount_cntr_cy<7>)
+     XORCY:CI->O           1   0.206   0.000  SET1_sample_control/Mcount_cntr_xor<8> (SET1_sample_control/Mcount_cntr8)
+     FDC:D                     0.074          SET1_sample_control/cntr_8
+    ----------------------------------------
+    Total                      5.002ns (1.922ns logic, 3.080ns route)
+                                       (38.4% logic, 61.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Global_Clock_Manager/pll_base_inst/CLKOUT1'
+  Clock period: 6.288ns (frequency: 159.033MHz)
+  Total number of paths / destination ports: 39 / 8
+-------------------------------------------------------------------------
+Delay:               3.144ns (Levels of Logic = 2)
+  Source:            SET1_SCD/cntr_4 (FF)
+  Destination:       SET1_ADC_Controller/cs_delay_2 (FF)
+  Source Clock:      Global_Clock_Manager/pll_base_inst/CLKOUT1 rising
+  Destination Clock: Global_Clock_Manager/pll_base_inst/CLKOUT1 falling
+
+  Data Path: SET1_SCD/cntr_4 to SET1_ADC_Controller/cs_delay_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              5   0.525   1.271  SET1_SCD/cntr_4 (SET1_SCD/cntr_4)
+     LUT6:I1->O            3   0.254   0.766  SET1_ADC_Controller/delay_en_sensor_clk_AND_1_o1 (SET1_ADC_Controller/delay_en_sensor_clk_AND_1_o)
+     LUT4:I3->O            1   0.254   0.000  SET1_ADC_Controller/cs_delay_2_glue_set (SET1_ADC_Controller/cs_delay_2_glue_set)
+     FD:D                      0.074          SET1_ADC_Controller/cs_delay_2
+    ----------------------------------------
+    Total                      3.144ns (1.107ns logic, 2.037ns route)
+                                       (35.2% logic, 64.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Sensor1_Internal_clk'
+  Clock period: 3.167ns (frequency: 315.756MHz)
+  Total number of paths / destination ports: 36 / 8
+-------------------------------------------------------------------------
+Delay:               3.167ns (Levels of Logic = 2)
+  Source:            SET1_ADC_Controller/cntr_0 (FF)
+  Destination:       SET1_ADC_Controller/cntr_6 (FF)
+  Source Clock:      Sensor1_Internal_clk rising
+  Destination Clock: Sensor1_Internal_clk rising
+
+  Data Path: SET1_ADC_Controller/cntr_0 to SET1_ADC_Controller/cntr_6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               6   0.525   1.104  SET1_ADC_Controller/cntr_0 (SET1_ADC_Controller/cntr_0)
+     LUT3:I0->O            3   0.235   0.994  SET1_ADC_Controller/Mcount_cntr311 (SET1_ADC_Controller/Mcount_cntr3_bdd0)
+     LUT6:I3->O            1   0.235   0.000  SET1_ADC_Controller/cntr_6_glue_set (SET1_ADC_Controller/cntr_6_glue_set)
+     FD:D                      0.074          SET1_ADC_Controller/cntr_6
+    ----------------------------------------
+    Total                      3.167ns (1.069ns logic, 2.098ns route)
+                                       (33.8% logic, 66.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Sensor1_Internal_clk_inv'
+  Total number of paths / destination ports: 9 / 9
+-------------------------------------------------------------------------
+Offset:              2.913ns (Levels of Logic = 1)
+  Source:            reset (PAD)
+  Destination:       SET1_sample_control/cntr_0 (FF)
+  Destination Clock: Sensor1_Internal_clk_inv rising
+
+  Data Path: reset to SET1_sample_control/cntr_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            14   1.328   1.126  reset_IBUF (reset_IBUF)
+     FDC:CLR                   0.459          SET1_sample_control/cntr_0
+    ----------------------------------------
+    Total                      2.913ns (1.787ns logic, 1.126ns route)
+                                       (61.3% logic, 38.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Global_Clock_Manager/pll_base_inst/CLKOUT1'
+  Total number of paths / destination ports: 5 / 5
+-------------------------------------------------------------------------
+Offset:              2.913ns (Levels of Logic = 1)
+  Source:            reset (PAD)
+  Destination:       SET1_SCD/cntr_0 (FF)
+  Destination Clock: Global_Clock_Manager/pll_base_inst/CLKOUT1 rising
+
+  Data Path: reset to SET1_SCD/cntr_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            14   1.328   1.126  reset_IBUF (reset_IBUF)
+     FDC:CLR                   0.459          SET1_SCD/cntr_0
+    ----------------------------------------
+    Total                      2.913ns (1.787ns logic, 1.126ns route)
+                                       (61.3% logic, 38.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Sensor1_Internal_clk_inv'
+  Total number of paths / destination ports: 9 / 1
+-------------------------------------------------------------------------
+Offset:              6.644ns (Levels of Logic = 3)
+  Source:            SET1_sample_control/cntr_3 (FF)
+  Destination:       SENSOR1_SI (PAD)
+  Source Clock:      Sensor1_Internal_clk_inv rising
+
+  Data Path: SET1_sample_control/cntr_3 to SENSOR1_SI
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.525   1.042  SET1_sample_control/cntr_3 (SET1_sample_control/cntr_3)
+     LUT4:I0->O            1   0.254   0.682  SET1_sample_control/serial_out<8>_SW0 (N2)
+     LUT6:I5->O            9   0.254   0.975  SET1_sample_control/serial_out<8> (SENSOR1_SI_OBUF)
+     OBUF:I->O                 2.912          SENSOR1_SI_OBUF (SENSOR1_SI)
+    ----------------------------------------
+    Total                      6.644ns (3.945ns logic, 2.699ns route)
+                                       (59.4% logic, 40.6% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock Global_Clock_Manager/pll_base_inst/CLKOUT1
+------------------------------------------+---------+---------+---------+---------+
+                                          | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                              |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------------------------+---------+---------+---------+---------+
+Global_Clock_Manager/pll_base_inst/CLKOUT1|    2.478|         |    3.144|         |
+Sensor1_Internal_clk                      |         |         |    3.054|         |
+------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock Sensor1_Internal_clk
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+Sensor1_Internal_clk    |    3.167|         |         |         |
+Sensor1_Internal_clk_inv|    4.165|         |         |         |
+------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock Sensor1_Internal_clk_inv
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+Sensor1_Internal_clk_inv|    5.002|         |         |         |
+------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.72 secs
+ 
+--> 
+
+Total memory usage is 258788 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   68 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
+

@@ -1,10 +1,19 @@
-NET "fpga_clk" LOC = P15;
-NET "fpga_clk" PERIOD = 10.0ns HIGH 50%;
+#Global Clock
+NET "fpga_clk_P" LOC = P15; //| IOSTANDARD=LVDS_33;
+NET "fpga_clk_N" LOC = P14; //| IOSTANDARD=LVDS_33;
+NET "fpga_clk_P" TNM_NET = "fpga_clk";
+TIMESPEC "TS_fpga_clk" = PERIOD "fpga_clk" 20 ns HIGH 50%;
 
-NET "serial_data1" LOC = P142;
-NET "serial_data2" LOC = P138;
-NET "ADC_clk" LOC = P140;
-NET "chip_select" LOC = P141;
+#inputs
+NET "ADC1_SDATA0"	LOC = P142;
+NET "ADC1_SDATA1"	LOC = P138;
 
-NET "sensor_clk" LOC = P46;
-NET "SI1" LOC = P45;
+#outputs
+NET "ADC1_CS"		LOC = P141;
+NET "ADC1_SCLK"	LOC = P140;
+NET "SENSOR1_CLK"	LOC = P46;
+NET "SENSOR1_SI"	LOC = P45;
+
+
+
+

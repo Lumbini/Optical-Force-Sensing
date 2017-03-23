@@ -126,7 +126,9 @@ endgenerate
 
   // Connect the output clocks to the design
   //-----------------------------------------
-  assign clk[1] = clk_int[1];
+  BUFG clkout1_buf
+   (.O (clk[1]),
+    .I (clk_int[1]));
   assign clk[2] = clk_int[2];
 
 

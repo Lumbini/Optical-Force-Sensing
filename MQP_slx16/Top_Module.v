@@ -30,13 +30,15 @@ module Top_Module(
 	output ADC_clk,
 	output chip_select,
 	output SPI_MISO,
-	output interrupt
-	//output clk_20M_out
+	output interrupt,
+	output [11:0] DataOut,
+	//output datatest
+	output clk_4M_out
     );
 	 wire [11:0]Data1;
 	 wire [11:0]Data2;
-	 wire clk_20M; 
-	 wire clk_8M;
+	 wire clk_4M; 
+	 wire clk_50M;
 	 wire lock;
 	 wire sample_control_signal;
 	 wire fake_reset = 0;
@@ -46,15 +48,17 @@ module Top_Module(
 	 wire new_Data;
 	 
 	 assign SI1 = sample_control_signal;
-	 //assign clk_20M_out = clk_20M;
+	 assign DataOut = Data1;
+	 assign clk_4M_out = clk_4M;
+	 //assign datatest = Data1[2];
 	 
 	 Serial_Sample_Control sample_control(sensor_clk_int, reset, sample_control_signal);
 	 
-	 sensor_clk_divider scd(clk_20M, reset, sensor_clk_int);
+	 sensor_clk_divider scd(clk_4M, reset, sensor_clk_int);
 	 
 	 ADC_control ADC1(serial_data1,
     serial_data2,
-	 clk_20M,
+	 clk_4M,
 	 sensor_clk_int,
 	 sample_control_signal,
     reset,
@@ -68,7 +72,7 @@ module Top_Module(
 	 
 	 SPI_to_USB SPI_out(Data1,
 	 new_Data,
-	 clk_8M,
+	 clk_50M,
 	 SPI_clk,
 	 SPI_cs,
 	 SPI_MISO);
@@ -78,8 +82,8 @@ module Top_Module(
    (// Clock in ports
     .CLK_IN1(fpga_clk),      // IN
     // Clock out ports
-    .CLK_OUT1(clk_8M),     // OUT
-    .CLK_OUT2(clk_20M),     // OUT
+    .CLK_OUT1(clk_50M),     // OUT
+    .CLK_OUT2(clk_4M),     // OUT
     // Status and control signals
     .RESET(fake_reset),// IN
     .LOCKED(lock));
@@ -134,6 +138,7 @@ module Top_Module(
 		.R(1'b0), // 1-bit reset input
 		.S(1'b0) // 1-bit set input
 	);
+
 
 
 endmodule

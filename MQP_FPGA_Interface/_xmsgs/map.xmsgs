@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="LIT" num="243" delta="new" >Logical network <arg fmt="%s" index="1">ADC1_SDATA0_IBUF</arg> has no load.
+</msg>
+
+<msg type="info" file="LIT" num="395" delta="new" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">1</arg> more times for the following (max. 5 shown):
+<arg fmt="%s" index="3">ADC1_SDATA1_IBUF</arg>
+To see the details of these <arg fmt="%s" index="4">info</arg> messages, please use the -detail switch.
+</msg>
+
+<msg type="info" file="MapLib" num="562" delta="old" >No environment variables are currently set.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="new" >Signal <arg fmt="%s" index="1">fpga_clk_N</arg> connected to top level port <arg fmt="%s" index="2">fpga_clk_N</arg> has been removed.
+</msg>
+
+<msg type="info" file="LIT" num="244" delta="old" >All of the single ended outputs in this design are using slew rate limited output drivers. The delay on speed critical single ended outputs can be dramatically reduced by designating them as fast outputs.
+</msg>
+
+<msg type="error" file="Pack" num="2908" delta="old" >The I/O component &quot;<arg fmt="%s" index="1">fpga_clk_P</arg>&quot; has an illegal IOSTANDARD value.  The <arg fmt="%s" index="2">IOB</arg> component is configured to use single-ended signaling and can not use differential IOSTANDARD value <arg fmt="%s" index="3">LVDS_33</arg>.  Two ways to rectify this issue are: 1) Change the IOSTANDARD value to a single-ended standard. 2) Correct the I/O connectivity by instantiating a differential I/O buffer.
+</msg>
+
+</messages>
+

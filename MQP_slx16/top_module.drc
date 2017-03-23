@@ -1,18 +1,18 @@
 Release 14.7 Drc P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Thu Feb 16 19:47:33 2017
+Wed Feb 22 20:28:53 2017
 
 drc -z Top_Module.ncd Top_Module.pcf
 
+WARNING:PhysDesignRules:372 - Gated clock. Clock net sensor_clk_int is sourced
+   by a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net ADC1/_n01041 is sourced by
    a combinatorial pin. This is not good design practice. Use the CE pin to
    control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net cs_int is sourced by a
    combinatorial pin. This is not good design practice. Use the CE pin to
-   control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net sensor_clk_int is sourced
-   by a combinatorial pin. This is not good design practice. Use the CE pin to
    control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net sensor_clk_int_inv is
    sourced by a combinatorial pin. This is not good design practice. Use the CE

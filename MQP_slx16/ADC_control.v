@@ -44,7 +44,6 @@ module ADC_control(
 	 assign chip_select = (cs_delay == 4'd2);
     assign ADC_clk = clk_20M;
 	 assign interrupt = (cntr == 0);
-	 
 
 	//Enable ADC Sampling for 128 Sensor Clock Cycles
 	 always @(posedge sensor_clk)

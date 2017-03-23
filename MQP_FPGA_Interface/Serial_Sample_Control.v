@@ -25,16 +25,17 @@ module Serial_Sample_Control(
     );
 	reg [8:0]cntr = 0;
 	
-	//Asynchronous reset
-	always @(posedge reset)
-		cntr <= 0;
 	
 	//Start Sample Cycle Every 129 Clock cycles
-	always @(negedge sensor_clk)
-		if(cntr == 128)
+	always @(negedge sensor_clk, posedge reset)
+	begin
+		if(reset)
+			cntr <= 0;
+		else if(cntr == 128)
 			cntr <= 0;
 		else
 			cntr <= cntr +1'b1;
+	end
 	
 	assign serial_out = (cntr == 1);
 

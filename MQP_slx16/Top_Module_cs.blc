@@ -1,0 +1,27 @@
+Release 14.7 ngcbuild P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: ngcbuild.exe -dd R:/MQP/MQP_slx16/_ngo -sd ipcore_dir -p
+xc6slx16-csg324-3 -i R:\MQP\MQP_slx16\Top_Module.ngc
+R:\MQP\MQP_slx16\Top_Module_cs.ngc
+
+Reading NGO file "R:/MQP/MQP_slx16/Top_Module.ngc" ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGCBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 159744 kilobytes
+
+Writing NGC file "R:/MQP/MQP_slx16/Top_Module_cs.ngc" ...
+Total REAL time to NGCBUILD completion:  2 sec
+Total CPU time to NGCBUILD completion:   2 sec
+
+Writing NGCBUILD log file "R:/MQP/MQP_slx16/Top_Module_cs.blc"...

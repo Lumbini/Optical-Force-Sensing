@@ -5,5 +5,8 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"R:/MQP/MQP_slx16/MQP_Test.v" Line 55: Port <arg fmt="%s" index="1">interrupt</arg> is not connected to this instance
+</msg>
+
 </messages>
 

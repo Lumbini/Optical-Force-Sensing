@@ -47,7 +47,7 @@
 # PART OF THIS FILE AT ALL TIMES.
 # 
 
-set device xc6slx9tqg144-3
+set device xc6slx9tqg144-2
 set projName DCM_MQP
 set design DCM_MQP
 set projDir [file dirname [info script]]

@@ -1,9 +1,10 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Feb 16 19:47:02 2017
+// Written by: Map P.20131013 on Wed Feb 22 20:28:23 2017
 //! **************************************************************************
 
 SCHEMATIC START;
 COMP "sensor_clk" LOCATE = SITE "G3" LEVEL 1;
+COMP "interrupt" LOCATE = SITE "F2" LEVEL 1;
 COMP "SPI_clk" LOCATE = SITE "J7" LEVEL 1;
 COMP "SI1" LOCATE = SITE "G11" LEVEL 1;
 COMP "chip_select" LOCATE = SITE "K2" LEVEL 1;

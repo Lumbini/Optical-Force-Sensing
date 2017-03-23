@@ -13,3 +13,6 @@ NET "sensor_clk" 	LOC = G3;
 NET "ADC_clk" 		LOC = L3;
 NET "chip_select" LOC = K2;
 NET "SPI_MISO"		LOC = J6;
+NET "interrupt"	LOC = F2;
+#NET "ext_clk"		LOC = H3;
+#NET "datatest"		LOC = M10;

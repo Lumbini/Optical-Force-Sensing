@@ -4,6 +4,7 @@ Number of CPUs detected in this system: 8
 Turning on mult-threading, number of parallel sub-compilation jobs: 16 
 Determining compilation order of HDL files
 Analyzing Verilog file "R:/MQP/MQP_slx16/ipcore_dir/DCM_MQP.v" into library work
+Analyzing Verilog file "R:/MQP/MQP_slx16/SPI_to_USB.v" into library work
 Analyzing Verilog file "R:/MQP/MQP_slx16/Serial_Sample_Control.v" into library work
 Analyzing Verilog file "R:/MQP/MQP_slx16/sensor_clk_divider.v" into library work
 Analyzing Verilog file "R:/MQP/MQP_slx16/ADC_control.v" into library work
@@ -11,10 +12,12 @@ Analyzing Verilog file "R:/MQP/MQP_slx16/Top_Module.v" into library work
 Analyzing Verilog file "R:/MQP/MQP_slx16/MQP_Test.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
+WARNING:HDLCompiler:1016 - "R:/MQP/MQP_slx16/MQP_Test.v" Line 55: Port interrupt is not connected to this instance
 Completed static elaboration
 Compiling module Serial_Sample_Control
 Compiling module sensor_clk_divider
 Compiling module ADC_control
+Compiling module SPI_to_USB
 Compiling module IBUFG
 Compiling module PLL_ADV(BANDWIDTH="OPTIMIZED",CL...
 Compiling module PLL_BASE(CLKFBOUT_MULT=4,CLKIN_P...
@@ -25,7 +28,7 @@ Compiling module Top_Module
 Compiling module MQP_Test
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Compiled 12 Verilog Units
+Compiled 13 Verilog Units
 Built simulation executable R:/MQP/MQP_slx16/MQP_Test_isim_beh.exe
-Fuse Memory Usage: 43524 KB
-Fuse CPU Usage: 872 ms
+Fuse Memory Usage: 43448 KB
+Fuse CPU Usage: 623 ms

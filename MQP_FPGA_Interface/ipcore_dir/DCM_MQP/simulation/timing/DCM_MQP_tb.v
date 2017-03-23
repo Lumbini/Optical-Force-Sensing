@@ -71,7 +71,7 @@ module DCM_MQP_tb ();
   // how many cycles to run
   localparam  COUNT_PHASE = 1024;
   // we'll be using the period in many locations
-  localparam time PER1    = 10.0*ONE_NS;
+  localparam time PER1    = 20.0*ONE_NS;
   localparam time PER1_1  = PER1/2;
   localparam time PER1_2  = PER1 - PER1/2;
 

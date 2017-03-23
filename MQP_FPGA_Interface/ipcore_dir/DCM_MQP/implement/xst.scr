@@ -1,7 +1,7 @@
 run
 -ifmt MIXED
 -top DCM_MQP_exdes
--p xc6slx9-tqg144-3
+-p xc6slx9-tqg144-2
 -ifn xst.prj
 -ofn DCM_MQP_exdes
 -keep_hierarchy soft 

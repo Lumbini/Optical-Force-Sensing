@@ -55,7 +55,7 @@
 // "Output    Output      Phase     Duty      Pk-to-Pk        Phase"
 // "Clock    Freq (MHz) (degrees) Cycle (%) Jitter (ps)  Error (ps)"
 //----------------------------------------------------------------------------
-// CLK_OUT1_____8.000______0.000______50.0______287.733____235.738
+// CLK_OUT1____50.000______0.000______50.0______198.618____235.738
 // CLK_OUT2_____4.000______0.000______50.0______330.210____235.738
 //
 //----------------------------------------------------------------------------
@@ -105,7 +105,7 @@ module DCM_MQP
     .DIVCLK_DIVIDE          (1),
     .CLKFBOUT_MULT          (4),
     .CLKFBOUT_PHASE         (0.000),
-    .CLKOUT0_DIVIDE         (50),
+    .CLKOUT0_DIVIDE         (8),
     .CLKOUT0_PHASE          (0.000),
     .CLKOUT0_DUTY_CYCLE     (0.500),
     .CLKOUT1_DIVIDE         (100),
@@ -132,13 +132,9 @@ module DCM_MQP
 
   // Output buffering
   //-----------------------------------
-  BUFG clkf_buf
-   (.O (clkfbout_buf),
-    .I (clkfbout));
+  assign clkfbout_buf = clkfbout;
 
-  BUFG clkout1_buf
-   (.O   (CLK_OUT1),
-    .I   (clkout0));
+  assign CLK_OUT1 = clkout0;
 
 
   BUFG clkout2_buf

@@ -42,7 +42,7 @@ Slack: 6.666ns (period - (min low pulse limit / (low pulse / period)))
   Low pulse limit: 1.667ns (Tdcmpw_CLKIN_100_150)
   Physical resource: clock_manager/pll_base_inst/PLL_ADV/CLKIN1
   Logical resource: clock_manager/pll_base_inst/PLL_ADV/CLKIN1
-  Location pin: PLL_ADV_X0Y0.CLKIN1
+  Location pin: PLL_ADV_X0Y0.CLKIN2
   Clock network: clock_manager/pll_base_inst/PLL_ADV_ML_NEW_DIVCLK
 --------------------------------------------------------------------------------
 Slack: 6.666ns (period - (min high pulse limit / (high pulse / period)))
@@ -51,7 +51,7 @@ Slack: 6.666ns (period - (min high pulse limit / (high pulse / period)))
   High pulse limit: 1.667ns (Tdcmpw_CLKIN_100_150)
   Physical resource: clock_manager/pll_base_inst/PLL_ADV/CLKIN1
   Logical resource: clock_manager/pll_base_inst/PLL_ADV/CLKIN1
-  Location pin: PLL_ADV_X0Y0.CLKIN1
+  Location pin: PLL_ADV_X0Y0.CLKIN2
   Clock network: clock_manager/pll_base_inst/PLL_ADV_ML_NEW_DIVCLK
 --------------------------------------------------------------------------------
 Slack: 8.148ns (period - min period limit)
@@ -59,7 +59,7 @@ Slack: 8.148ns (period - min period limit)
   Min period limit: 1.852ns (539.957MHz) (Tpllper_CLKIN(Finmax))
   Physical resource: clock_manager/pll_base_inst/PLL_ADV/CLKIN1
   Logical resource: clock_manager/pll_base_inst/PLL_ADV/CLKIN1
-  Location pin: PLL_ADV_X0Y0.CLKIN1
+  Location pin: PLL_ADV_X0Y0.CLKIN2
   Clock network: clock_manager/pll_base_inst/PLL_ADV_ML_NEW_DIVCLK
 --------------------------------------------------------------------------------
 
@@ -69,21 +69,21 @@ Timing constraint: PERIOD analysis for net "clock_manager/clkout1" derived from
 250 nS   
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 39 paths analyzed, 27 endpoints analyzed, 0 failing endpoints
+ 417 paths analyzed, 165 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   4.434ns.
+ Minimum period is   5.736ns.
 --------------------------------------------------------------------------------
 
-Paths for end point ADC1/cs_delay_0 (SLICE_X5Y47.A2), 5 paths
+Paths for end point ADC1/pdata1_6 (SLICE_X8Y25.CE), 3 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     122.783ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               scd/cntr_0 (FF)
-  Destination:          ADC1/cs_delay_0 (FF)
+Slack (setup path):     122.132ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ADC1/cs_delay_0 (FF)
+  Destination:          ADC1/pdata1_6 (FF)
   Requirement:          125.000ns
-  Data Path Delay:      2.033ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.019ns (0.372 - 0.391)
-  Source Clock:         clk_20M rising at 0.000ns
-  Destination Clock:    clk_20M falling at 125.000ns
+  Data Path Delay:      2.671ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.032ns (0.256 - 0.288)
+  Source Clock:         clk_4M falling at 125.000ns
+  Destination Clock:    clk_4M rising at 250.000ns
   Clock Uncertainty:    0.165ns
 
   Clock Uncertainty:          0.165ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
@@ -91,32 +91,31 @@ Slack (setup path):     122.783ns (requirement - (data path - clock path skew + 
     Discrete Jitter (DJ):       0.321ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: scd/cntr_0 to ADC1/cs_delay_0
+  Maximum Data Path at Slow Process Corner: ADC1/cs_delay_0 to ADC1/pdata1_6
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X5Y48.AQ       Tcko                  0.391   scd/cntr<4>
-                                                       scd/cntr_0
-    SLICE_X5Y47.C2       net (fanout=5)        0.612   scd/cntr<0>
-    SLICE_X5Y47.C        Tilo                  0.259   ADC1/cs_delay<2>
-                                                       ADC1/delay_en_sensor_clk_AND_1_o1
-    SLICE_X5Y47.A2       net (fanout=3)        0.449   ADC1/delay_en_sensor_clk_AND_1_o
-    SLICE_X5Y47.CLK      Tas                   0.322   ADC1/cs_delay<2>
-                                                       ADC1/cs_delay_0_rstpot
+    SLICE_X7Y27.AQ       Tcko                  0.391   ADC1/cs_delay<2>
                                                        ADC1/cs_delay_0
+    SLICE_X8Y25.D3       net (fanout=11)       0.906   ADC1/cs_delay<0>
+    SLICE_X8Y25.D        Tilo                  0.205   ADC1/pdata1<10>
+                                                       ADC1/_n010411
+    SLICE_X8Y25.CE       net (fanout=3)        0.834   ADC1/_n01041
+    SLICE_X8Y25.CLK      Tceck                 0.335   ADC1/pdata1<10>
+                                                       ADC1/pdata1_6
     -------------------------------------------------  ---------------------------
-    Total                                      2.033ns (0.972ns logic, 1.061ns route)
-                                                       (47.8% logic, 52.2% route)
+    Total                                      2.671ns (0.931ns logic, 1.740ns route)
+                                                       (34.9% logic, 65.1% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     122.803ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               scd/cntr_4 (FF)
-  Destination:          ADC1/cs_delay_0 (FF)
+Slack (setup path):     122.186ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ADC1/cs_delay_1 (FF)
+  Destination:          ADC1/pdata1_6 (FF)
   Requirement:          125.000ns
-  Data Path Delay:      2.013ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.019ns (0.372 - 0.391)
-  Source Clock:         clk_20M rising at 0.000ns
-  Destination Clock:    clk_20M falling at 125.000ns
+  Data Path Delay:      2.617ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.032ns (0.256 - 0.288)
+  Source Clock:         clk_4M falling at 125.000ns
+  Destination Clock:    clk_4M rising at 250.000ns
   Clock Uncertainty:    0.165ns
 
   Clock Uncertainty:          0.165ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
@@ -124,32 +123,98 @@ Slack (setup path):     122.803ns (requirement - (data path - clock path skew + 
     Discrete Jitter (DJ):       0.321ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: scd/cntr_4 to ADC1/cs_delay_0
+  Maximum Data Path at Slow Process Corner: ADC1/cs_delay_1 to ADC1/pdata1_6
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X5Y48.CQ       Tcko                  0.391   scd/cntr<4>
-                                                       scd/cntr_4
-    SLICE_X5Y47.C1       net (fanout=3)        0.592   scd/cntr<4>
-    SLICE_X5Y47.C        Tilo                  0.259   ADC1/cs_delay<2>
-                                                       ADC1/delay_en_sensor_clk_AND_1_o1
-    SLICE_X5Y47.A2       net (fanout=3)        0.449   ADC1/delay_en_sensor_clk_AND_1_o
-    SLICE_X5Y47.CLK      Tas                   0.322   ADC1/cs_delay<2>
-                                                       ADC1/cs_delay_0_rstpot
+    SLICE_X7Y27.BQ       Tcko                  0.391   ADC1/cs_delay<2>
+                                                       ADC1/cs_delay_1
+    SLICE_X8Y25.D4       net (fanout=10)       0.852   ADC1/cs_delay<1>
+    SLICE_X8Y25.D        Tilo                  0.205   ADC1/pdata1<10>
+                                                       ADC1/_n010411
+    SLICE_X8Y25.CE       net (fanout=3)        0.834   ADC1/_n01041
+    SLICE_X8Y25.CLK      Tceck                 0.335   ADC1/pdata1<10>
+                                                       ADC1/pdata1_6
+    -------------------------------------------------  ---------------------------
+    Total                                      2.617ns (0.931ns logic, 1.686ns route)
+                                                       (35.6% logic, 64.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     122.206ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ADC1/cs_delay_2 (FF)
+  Destination:          ADC1/pdata1_6 (FF)
+  Requirement:          125.000ns
+  Data Path Delay:      2.597ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.032ns (0.256 - 0.288)
+  Source Clock:         clk_4M falling at 125.000ns
+  Destination Clock:    clk_4M rising at 250.000ns
+  Clock Uncertainty:    0.165ns
+
+  Clock Uncertainty:          0.165ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.321ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ADC1/cs_delay_2 to ADC1/pdata1_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y27.DQ       Tcko                  0.391   ADC1/cs_delay<2>
+                                                       ADC1/cs_delay_2
+    SLICE_X8Y25.D5       net (fanout=10)       0.832   ADC1/cs_delay<2>
+    SLICE_X8Y25.D        Tilo                  0.205   ADC1/pdata1<10>
+                                                       ADC1/_n010411
+    SLICE_X8Y25.CE       net (fanout=3)        0.834   ADC1/_n01041
+    SLICE_X8Y25.CLK      Tceck                 0.335   ADC1/pdata1<10>
+                                                       ADC1/pdata1_6
+    -------------------------------------------------  ---------------------------
+    Total                                      2.597ns (0.931ns logic, 1.666ns route)
+                                                       (35.8% logic, 64.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point ADC1/pdata1_7 (SLICE_X8Y25.CE), 3 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     122.149ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ADC1/cs_delay_0 (FF)
+  Destination:          ADC1/pdata1_7 (FF)
+  Requirement:          125.000ns
+  Data Path Delay:      2.654ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.032ns (0.256 - 0.288)
+  Source Clock:         clk_4M falling at 125.000ns
+  Destination Clock:    clk_4M rising at 250.000ns
+  Clock Uncertainty:    0.165ns
+
+  Clock Uncertainty:          0.165ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.321ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ADC1/cs_delay_0 to ADC1/pdata1_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y27.AQ       Tcko                  0.391   ADC1/cs_delay<2>
                                                        ADC1/cs_delay_0
+    SLICE_X8Y25.D3       net (fanout=11)       0.906   ADC1/cs_delay<0>
+    SLICE_X8Y25.D        Tilo                  0.205   ADC1/pdata1<10>
+                                                       ADC1/_n010411
+    SLICE_X8Y25.CE       net (fanout=3)        0.834   ADC1/_n01041
+    SLICE_X8Y25.CLK      Tceck                 0.318   ADC1/pdata1<10>
+                                                       ADC1/pdata1_7
     -------------------------------------------------  ---------------------------
-    Total                                      2.013ns (0.972ns logic, 1.041ns route)
-                                                       (48.3% logic, 51.7% route)
+    Total                                      2.654ns (0.914ns logic, 1.740ns route)
+                                                       (34.4% logic, 65.6% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     122.826ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               scd/cntr_3 (FF)
-  Destination:          ADC1/cs_delay_0 (FF)
+Slack (setup path):     122.203ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ADC1/cs_delay_1 (FF)
+  Destination:          ADC1/pdata1_7 (FF)
   Requirement:          125.000ns
-  Data Path Delay:      1.990ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.019ns (0.372 - 0.391)
-  Source Clock:         clk_20M rising at 0.000ns
-  Destination Clock:    clk_20M falling at 125.000ns
+  Data Path Delay:      2.600ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.032ns (0.256 - 0.288)
+  Source Clock:         clk_4M falling at 125.000ns
+  Destination Clock:    clk_4M rising at 250.000ns
   Clock Uncertainty:    0.165ns
 
   Clock Uncertainty:          0.165ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
@@ -157,35 +222,98 @@ Slack (setup path):     122.826ns (requirement - (data path - clock path skew + 
     Discrete Jitter (DJ):       0.321ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: scd/cntr_3 to ADC1/cs_delay_0
+  Maximum Data Path at Slow Process Corner: ADC1/cs_delay_1 to ADC1/pdata1_7
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X5Y48.BMUX     Tshcko                0.461   scd/cntr<4>
-                                                       scd/cntr_3
-    SLICE_X5Y47.C3       net (fanout=4)        0.499   scd/cntr<3>
-    SLICE_X5Y47.C        Tilo                  0.259   ADC1/cs_delay<2>
-                                                       ADC1/delay_en_sensor_clk_AND_1_o1
-    SLICE_X5Y47.A2       net (fanout=3)        0.449   ADC1/delay_en_sensor_clk_AND_1_o
-    SLICE_X5Y47.CLK      Tas                   0.322   ADC1/cs_delay<2>
-                                                       ADC1/cs_delay_0_rstpot
+    SLICE_X7Y27.BQ       Tcko                  0.391   ADC1/cs_delay<2>
+                                                       ADC1/cs_delay_1
+    SLICE_X8Y25.D4       net (fanout=10)       0.852   ADC1/cs_delay<1>
+    SLICE_X8Y25.D        Tilo                  0.205   ADC1/pdata1<10>
+                                                       ADC1/_n010411
+    SLICE_X8Y25.CE       net (fanout=3)        0.834   ADC1/_n01041
+    SLICE_X8Y25.CLK      Tceck                 0.318   ADC1/pdata1<10>
+                                                       ADC1/pdata1_7
+    -------------------------------------------------  ---------------------------
+    Total                                      2.600ns (0.914ns logic, 1.686ns route)
+                                                       (35.2% logic, 64.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     122.223ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ADC1/cs_delay_2 (FF)
+  Destination:          ADC1/pdata1_7 (FF)
+  Requirement:          125.000ns
+  Data Path Delay:      2.580ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.032ns (0.256 - 0.288)
+  Source Clock:         clk_4M falling at 125.000ns
+  Destination Clock:    clk_4M rising at 250.000ns
+  Clock Uncertainty:    0.165ns
+
+  Clock Uncertainty:          0.165ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.321ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ADC1/cs_delay_2 to ADC1/pdata1_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y27.DQ       Tcko                  0.391   ADC1/cs_delay<2>
+                                                       ADC1/cs_delay_2
+    SLICE_X8Y25.D5       net (fanout=10)       0.832   ADC1/cs_delay<2>
+    SLICE_X8Y25.D        Tilo                  0.205   ADC1/pdata1<10>
+                                                       ADC1/_n010411
+    SLICE_X8Y25.CE       net (fanout=3)        0.834   ADC1/_n01041
+    SLICE_X8Y25.CLK      Tceck                 0.318   ADC1/pdata1<10>
+                                                       ADC1/pdata1_7
+    -------------------------------------------------  ---------------------------
+    Total                                      2.580ns (0.914ns logic, 1.666ns route)
+                                                       (35.4% logic, 64.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point ADC1/pdata1_9 (SLICE_X8Y25.CE), 3 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     122.152ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ADC1/cs_delay_0 (FF)
+  Destination:          ADC1/pdata1_9 (FF)
+  Requirement:          125.000ns
+  Data Path Delay:      2.651ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.032ns (0.256 - 0.288)
+  Source Clock:         clk_4M falling at 125.000ns
+  Destination Clock:    clk_4M rising at 250.000ns
+  Clock Uncertainty:    0.165ns
+
+  Clock Uncertainty:          0.165ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.321ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ADC1/cs_delay_0 to ADC1/pdata1_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y27.AQ       Tcko                  0.391   ADC1/cs_delay<2>
                                                        ADC1/cs_delay_0
+    SLICE_X8Y25.D3       net (fanout=11)       0.906   ADC1/cs_delay<0>
+    SLICE_X8Y25.D        Tilo                  0.205   ADC1/pdata1<10>
+                                                       ADC1/_n010411
+    SLICE_X8Y25.CE       net (fanout=3)        0.834   ADC1/_n01041
+    SLICE_X8Y25.CLK      Tceck                 0.315   ADC1/pdata1<10>
+                                                       ADC1/pdata1_9
     -------------------------------------------------  ---------------------------
-    Total                                      1.990ns (1.042ns logic, 0.948ns route)
-                                                       (52.4% logic, 47.6% route)
+    Total                                      2.651ns (0.911ns logic, 1.740ns route)
+                                                       (34.4% logic, 65.6% route)
 
 --------------------------------------------------------------------------------
-
-Paths for end point ADC1/cs_delay_1 (SLICE_X5Y47.B4), 5 paths
---------------------------------------------------------------------------------
-Slack (setup path):     122.893ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               scd/cntr_0 (FF)
-  Destination:          ADC1/cs_delay_1 (FF)
+Slack (setup path):     122.206ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ADC1/cs_delay_1 (FF)
+  Destination:          ADC1/pdata1_9 (FF)
   Requirement:          125.000ns
-  Data Path Delay:      1.923ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.019ns (0.372 - 0.391)
-  Source Clock:         clk_20M rising at 0.000ns
-  Destination Clock:    clk_20M falling at 125.000ns
+  Data Path Delay:      2.597ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.032ns (0.256 - 0.288)
+  Source Clock:         clk_4M falling at 125.000ns
+  Destination Clock:    clk_4M rising at 250.000ns
   Clock Uncertainty:    0.165ns
 
   Clock Uncertainty:          0.165ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
@@ -193,32 +321,31 @@ Slack (setup path):     122.893ns (requirement - (data path - clock path skew + 
     Discrete Jitter (DJ):       0.321ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: scd/cntr_0 to ADC1/cs_delay_1
+  Maximum Data Path at Slow Process Corner: ADC1/cs_delay_1 to ADC1/pdata1_9
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X5Y48.AQ       Tcko                  0.391   scd/cntr<4>
-                                                       scd/cntr_0
-    SLICE_X5Y47.C2       net (fanout=5)        0.612   scd/cntr<0>
-    SLICE_X5Y47.C        Tilo                  0.259   ADC1/cs_delay<2>
-                                                       ADC1/delay_en_sensor_clk_AND_1_o1
-    SLICE_X5Y47.B4       net (fanout=3)        0.339   ADC1/delay_en_sensor_clk_AND_1_o
-    SLICE_X5Y47.CLK      Tas                   0.322   ADC1/cs_delay<2>
-                                                       ADC1/cs_delay_1_glue_set
+    SLICE_X7Y27.BQ       Tcko                  0.391   ADC1/cs_delay<2>
                                                        ADC1/cs_delay_1
+    SLICE_X8Y25.D4       net (fanout=10)       0.852   ADC1/cs_delay<1>
+    SLICE_X8Y25.D        Tilo                  0.205   ADC1/pdata1<10>
+                                                       ADC1/_n010411
+    SLICE_X8Y25.CE       net (fanout=3)        0.834   ADC1/_n01041
+    SLICE_X8Y25.CLK      Tceck                 0.315   ADC1/pdata1<10>
+                                                       ADC1/pdata1_9
     -------------------------------------------------  ---------------------------
-    Total                                      1.923ns (0.972ns logic, 0.951ns route)
-                                                       (50.5% logic, 49.5% route)
+    Total                                      2.597ns (0.911ns logic, 1.686ns route)
+                                                       (35.1% logic, 64.9% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     122.913ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               scd/cntr_4 (FF)
-  Destination:          ADC1/cs_delay_1 (FF)
+Slack (setup path):     122.226ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ADC1/cs_delay_2 (FF)
+  Destination:          ADC1/pdata1_9 (FF)
   Requirement:          125.000ns
-  Data Path Delay:      1.903ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.019ns (0.372 - 0.391)
-  Source Clock:         clk_20M rising at 0.000ns
-  Destination Clock:    clk_20M falling at 125.000ns
+  Data Path Delay:      2.577ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.032ns (0.256 - 0.288)
+  Source Clock:         clk_4M falling at 125.000ns
+  Destination Clock:    clk_4M rising at 250.000ns
   Clock Uncertainty:    0.165ns
 
   Clock Uncertainty:          0.165ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
@@ -226,157 +353,21 @@ Slack (setup path):     122.913ns (requirement - (data path - clock path skew + 
     Discrete Jitter (DJ):       0.321ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: scd/cntr_4 to ADC1/cs_delay_1
+  Maximum Data Path at Slow Process Corner: ADC1/cs_delay_2 to ADC1/pdata1_9
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X5Y48.CQ       Tcko                  0.391   scd/cntr<4>
-                                                       scd/cntr_4
-    SLICE_X5Y47.C1       net (fanout=3)        0.592   scd/cntr<4>
-    SLICE_X5Y47.C        Tilo                  0.259   ADC1/cs_delay<2>
-                                                       ADC1/delay_en_sensor_clk_AND_1_o1
-    SLICE_X5Y47.B4       net (fanout=3)        0.339   ADC1/delay_en_sensor_clk_AND_1_o
-    SLICE_X5Y47.CLK      Tas                   0.322   ADC1/cs_delay<2>
-                                                       ADC1/cs_delay_1_glue_set
-                                                       ADC1/cs_delay_1
-    -------------------------------------------------  ---------------------------
-    Total                                      1.903ns (0.972ns logic, 0.931ns route)
-                                                       (51.1% logic, 48.9% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     122.936ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               scd/cntr_3 (FF)
-  Destination:          ADC1/cs_delay_1 (FF)
-  Requirement:          125.000ns
-  Data Path Delay:      1.880ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.019ns (0.372 - 0.391)
-  Source Clock:         clk_20M rising at 0.000ns
-  Destination Clock:    clk_20M falling at 125.000ns
-  Clock Uncertainty:    0.165ns
-
-  Clock Uncertainty:          0.165ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.321ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: scd/cntr_3 to ADC1/cs_delay_1
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X5Y48.BMUX     Tshcko                0.461   scd/cntr<4>
-                                                       scd/cntr_3
-    SLICE_X5Y47.C3       net (fanout=4)        0.499   scd/cntr<3>
-    SLICE_X5Y47.C        Tilo                  0.259   ADC1/cs_delay<2>
-                                                       ADC1/delay_en_sensor_clk_AND_1_o1
-    SLICE_X5Y47.B4       net (fanout=3)        0.339   ADC1/delay_en_sensor_clk_AND_1_o
-    SLICE_X5Y47.CLK      Tas                   0.322   ADC1/cs_delay<2>
-                                                       ADC1/cs_delay_1_glue_set
-                                                       ADC1/cs_delay_1
-    -------------------------------------------------  ---------------------------
-    Total                                      1.880ns (1.042ns logic, 0.838ns route)
-                                                       (55.4% logic, 44.6% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point ADC1/cs_delay_2 (SLICE_X5Y47.D5), 5 paths
---------------------------------------------------------------------------------
-Slack (setup path):     123.011ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               scd/cntr_0 (FF)
-  Destination:          ADC1/cs_delay_2 (FF)
-  Requirement:          125.000ns
-  Data Path Delay:      1.805ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.019ns (0.372 - 0.391)
-  Source Clock:         clk_20M rising at 0.000ns
-  Destination Clock:    clk_20M falling at 125.000ns
-  Clock Uncertainty:    0.165ns
-
-  Clock Uncertainty:          0.165ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.321ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: scd/cntr_0 to ADC1/cs_delay_2
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X5Y48.AQ       Tcko                  0.391   scd/cntr<4>
-                                                       scd/cntr_0
-    SLICE_X5Y47.C2       net (fanout=5)        0.612   scd/cntr<0>
-    SLICE_X5Y47.C        Tilo                  0.259   ADC1/cs_delay<2>
-                                                       ADC1/delay_en_sensor_clk_AND_1_o1
-    SLICE_X5Y47.D5       net (fanout=3)        0.221   ADC1/delay_en_sensor_clk_AND_1_o
-    SLICE_X5Y47.CLK      Tas                   0.322   ADC1/cs_delay<2>
-                                                       ADC1/cs_delay_2_glue_set
+    SLICE_X7Y27.DQ       Tcko                  0.391   ADC1/cs_delay<2>
                                                        ADC1/cs_delay_2
+    SLICE_X8Y25.D5       net (fanout=10)       0.832   ADC1/cs_delay<2>
+    SLICE_X8Y25.D        Tilo                  0.205   ADC1/pdata1<10>
+                                                       ADC1/_n010411
+    SLICE_X8Y25.CE       net (fanout=3)        0.834   ADC1/_n01041
+    SLICE_X8Y25.CLK      Tceck                 0.315   ADC1/pdata1<10>
+                                                       ADC1/pdata1_9
     -------------------------------------------------  ---------------------------
-    Total                                      1.805ns (0.972ns logic, 0.833ns route)
-                                                       (53.9% logic, 46.1% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     123.031ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               scd/cntr_4 (FF)
-  Destination:          ADC1/cs_delay_2 (FF)
-  Requirement:          125.000ns
-  Data Path Delay:      1.785ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.019ns (0.372 - 0.391)
-  Source Clock:         clk_20M rising at 0.000ns
-  Destination Clock:    clk_20M falling at 125.000ns
-  Clock Uncertainty:    0.165ns
-
-  Clock Uncertainty:          0.165ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.321ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: scd/cntr_4 to ADC1/cs_delay_2
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X5Y48.CQ       Tcko                  0.391   scd/cntr<4>
-                                                       scd/cntr_4
-    SLICE_X5Y47.C1       net (fanout=3)        0.592   scd/cntr<4>
-    SLICE_X5Y47.C        Tilo                  0.259   ADC1/cs_delay<2>
-                                                       ADC1/delay_en_sensor_clk_AND_1_o1
-    SLICE_X5Y47.D5       net (fanout=3)        0.221   ADC1/delay_en_sensor_clk_AND_1_o
-    SLICE_X5Y47.CLK      Tas                   0.322   ADC1/cs_delay<2>
-                                                       ADC1/cs_delay_2_glue_set
-                                                       ADC1/cs_delay_2
-    -------------------------------------------------  ---------------------------
-    Total                                      1.785ns (0.972ns logic, 0.813ns route)
-                                                       (54.5% logic, 45.5% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     123.054ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               scd/cntr_3 (FF)
-  Destination:          ADC1/cs_delay_2 (FF)
-  Requirement:          125.000ns
-  Data Path Delay:      1.762ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.019ns (0.372 - 0.391)
-  Source Clock:         clk_20M rising at 0.000ns
-  Destination Clock:    clk_20M falling at 125.000ns
-  Clock Uncertainty:    0.165ns
-
-  Clock Uncertainty:          0.165ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.321ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: scd/cntr_3 to ADC1/cs_delay_2
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X5Y48.BMUX     Tshcko                0.461   scd/cntr<4>
-                                                       scd/cntr_3
-    SLICE_X5Y47.C3       net (fanout=4)        0.499   scd/cntr<3>
-    SLICE_X5Y47.C        Tilo                  0.259   ADC1/cs_delay<2>
-                                                       ADC1/delay_en_sensor_clk_AND_1_o1
-    SLICE_X5Y47.D5       net (fanout=3)        0.221   ADC1/delay_en_sensor_clk_AND_1_o
-    SLICE_X5Y47.CLK      Tas                   0.322   ADC1/cs_delay<2>
-                                                       ADC1/cs_delay_2_glue_set
-                                                       ADC1/cs_delay_2
-    -------------------------------------------------  ---------------------------
-    Total                                      1.762ns (1.042ns logic, 0.720ns route)
-                                                       (59.1% logic, 40.9% route)
+    Total                                      2.577ns (0.911ns logic, 1.666ns route)
+                                                       (35.4% logic, 64.6% route)
 
 --------------------------------------------------------------------------------
 
@@ -386,87 +377,87 @@ Hold Paths: PERIOD analysis for net "clock_manager/clkout1" derived from
 
 --------------------------------------------------------------------------------
 
-Paths for end point scd/cntr_2 (SLICE_X5Y48.C5), 1 path
+Paths for end point scd/cntr_2 (SLICE_X4Y27.C5), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.415ns (requirement - (clock path skew + uncertainty - data path))
+Slack (hold path):      0.387ns (requirement - (clock path skew + uncertainty - data path))
   Source:               scd/cntr_4 (FF)
   Destination:          scd/cntr_2 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.415ns (Levels of Logic = 1)
+  Data Path Delay:      0.387ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
-  Source Clock:         clk_20M rising at 250.000ns
-  Destination Clock:    clk_20M rising at 250.000ns
+  Source Clock:         clk_4M rising at 250.000ns
+  Destination Clock:    clk_4M rising at 250.000ns
   Clock Uncertainty:    0.000ns
 
   Minimum Data Path at Fast Process Corner: scd/cntr_4 to scd/cntr_2
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X5Y48.CQ       Tcko                  0.198   scd/cntr<4>
+    SLICE_X4Y27.CQ       Tcko                  0.200   scd/cntr<4>
                                                        scd/cntr_4
-    SLICE_X5Y48.C5       net (fanout=3)        0.062   scd/cntr<4>
-    SLICE_X5Y48.CLK      Tah         (-Th)    -0.155   scd/cntr<4>
+    SLICE_X4Y27.C5       net (fanout=3)        0.066   scd/cntr<4>
+    SLICE_X4Y27.CLK      Tah         (-Th)    -0.121   scd/cntr<4>
                                                        scd/Mcount_cntr_xor<2>11
                                                        scd/cntr_2
     -------------------------------------------------  ---------------------------
-    Total                                      0.415ns (0.353ns logic, 0.062ns route)
-                                                       (85.1% logic, 14.9% route)
+    Total                                      0.387ns (0.321ns logic, 0.066ns route)
+                                                       (82.9% logic, 17.1% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point ADC1/cs_delay_2 (SLICE_X5Y47.D6), 1 path
+Paths for end point ADC1/shift_in1_3 (SLICE_X8Y24.C5), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.442ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               ADC1/cs_delay_2 (FF)
-  Destination:          ADC1/cs_delay_2 (FF)
+Slack (hold path):      0.387ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               ADC1/shift_in1_2 (FF)
+  Destination:          ADC1/shift_in1_3 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.442ns (Levels of Logic = 1)
+  Data Path Delay:      0.387ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
-  Source Clock:         clk_20M falling at 375.000ns
-  Destination Clock:    clk_20M falling at 375.000ns
+  Source Clock:         clk_4M rising at 250.000ns
+  Destination Clock:    clk_4M rising at 250.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: ADC1/cs_delay_2 to ADC1/cs_delay_2
+  Minimum Data Path at Fast Process Corner: ADC1/shift_in1_2 to ADC1/shift_in1_3
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X5Y47.DQ       Tcko                  0.198   ADC1/cs_delay<2>
-                                                       ADC1/cs_delay_2
-    SLICE_X5Y47.D6       net (fanout=3)        0.029   ADC1/cs_delay<2>
-    SLICE_X5Y47.CLK      Tah         (-Th)    -0.215   ADC1/cs_delay<2>
-                                                       ADC1/cs_delay_2_glue_set
-                                                       ADC1/cs_delay_2
+    SLICE_X8Y24.CQ       Tcko                  0.200   ADC1/shift_in1<4>
+                                                       ADC1/shift_in1_2
+    SLICE_X8Y24.C5       net (fanout=2)        0.066   ADC1/shift_in1<2>
+    SLICE_X8Y24.CLK      Tah         (-Th)    -0.121   ADC1/shift_in1<4>
+                                                       ADC1/shift_in1_3_dpot
+                                                       ADC1/shift_in1_3
     -------------------------------------------------  ---------------------------
-    Total                                      0.442ns (0.413ns logic, 0.029ns route)
-                                                       (93.4% logic, 6.6% route)
+    Total                                      0.387ns (0.321ns logic, 0.066ns route)
+                                                       (82.9% logic, 17.1% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point ADC1/cs_delay_0 (SLICE_X5Y47.A6), 1 path
+Paths for end point scd/cntr_0 (SLICE_X4Y27.A6), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.448ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               ADC1/cs_delay_0 (FF)
-  Destination:          ADC1/cs_delay_0 (FF)
+Slack (hold path):      0.425ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               scd/cntr_0 (FF)
+  Destination:          scd/cntr_0 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.448ns (Levels of Logic = 1)
+  Data Path Delay:      0.425ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
-  Source Clock:         clk_20M falling at 375.000ns
-  Destination Clock:    clk_20M falling at 375.000ns
+  Source Clock:         clk_4M rising at 250.000ns
+  Destination Clock:    clk_4M rising at 250.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: ADC1/cs_delay_0 to ADC1/cs_delay_0
+  Minimum Data Path at Fast Process Corner: scd/cntr_0 to scd/cntr_0
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X5Y47.AQ       Tcko                  0.198   ADC1/cs_delay<2>
-                                                       ADC1/cs_delay_0
-    SLICE_X5Y47.A6       net (fanout=4)        0.035   ADC1/cs_delay<0>
-    SLICE_X5Y47.CLK      Tah         (-Th)    -0.215   ADC1/cs_delay<2>
-                                                       ADC1/cs_delay_0_rstpot
-                                                       ADC1/cs_delay_0
+    SLICE_X4Y27.AQ       Tcko                  0.200   scd/cntr<4>
+                                                       scd/cntr_0
+    SLICE_X4Y27.A6       net (fanout=5)        0.035   scd/cntr<0>
+    SLICE_X4Y27.CLK      Tah         (-Th)    -0.190   scd/cntr<4>
+                                                       scd/Mcount_cntr_xor<0>11_INV_0
+                                                       scd/cntr_0
     -------------------------------------------------  ---------------------------
-    Total                                      0.448ns (0.413ns logic, 0.035ns route)
-                                                       (92.2% logic, 7.8% route)
+    Total                                      0.425ns (0.390ns logic, 0.035ns route)
+                                                       (91.8% logic, 8.2% route)
 
 --------------------------------------------------------------------------------
 
@@ -488,7 +479,7 @@ Slack: 248.270ns (period - min period limit)
   Min period limit: 1.730ns (578.035MHz) (Tbcper_I)
   Physical resource: clock_manager/clkout2_buf/I0
   Logical resource: clock_manager/clkout2_buf/I0
-  Location pin: BUFGMUX_X3Y13.I0
+  Location pin: BUFGMUX_X2Y3.I0
   Clock network: clock_manager/clkout1
 --------------------------------------------------------------------------------
 Slack: 248.361ns (period - min period limit)
@@ -497,7 +488,236 @@ Slack: 248.361ns (period - min period limit)
   Physical resource: ADC_clk_OBUF/CLK0
   Logical resource: clock_forward_inst/CK0
   Location pin: OLOGIC_X0Y24.CLK0
-  Clock network: clk_20M
+  Clock network: clk_4M
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PERIOD analysis for net "clk_50M" derived from  NET 
+"clock_manager/clkin1" PERIOD = 10 ns HIGH 50%;  multiplied by 2.00 to 20 nS   
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 431 paths analyzed, 118 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   6.022ns.
+--------------------------------------------------------------------------------
+
+Paths for end point SPI_out/MSB_shift_out_1 (SLICE_X9Y28.B2), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     6.989ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ADC1/pdata1_7 (FF)
+  Destination:          SPI_out/MSB_shift_out_1 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      1.739ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.987ns (0.532 - 1.519)
+  Source Clock:         clk_4M rising at 250.000ns
+  Destination Clock:    clk_50M rising at 260.000ns
+  Clock Uncertainty:    0.285ns
+
+  Clock Uncertainty:          0.285ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.321ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: ADC1/pdata1_7 to SPI_out/MSB_shift_out_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y25.AMUX     Tshcko                0.455   ADC1/pdata1<10>
+                                                       ADC1/pdata1_7
+    SLICE_X9Y28.B2       net (fanout=2)        1.057   ADC1/pdata1<7>
+    SLICE_X9Y28.CLK      Tas                   0.227   SPI_out/_n0068
+                                                       SPI_out/Mmux_MSB_shift_out[7]_MSB_shift_out[7]_mux_24_OUT21
+                                                       SPI_out/MSB_shift_out_1
+    -------------------------------------------------  ---------------------------
+    Total                                      1.739ns (0.682ns logic, 1.057ns route)
+                                                       (39.2% logic, 60.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point SPI_out/MSB_shift_out_2 (SLICE_X10Y27.A1), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     7.119ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ADC1/pdata1_8 (FF)
+  Destination:          SPI_out/MSB_shift_out_2 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      1.600ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.996ns (0.523 - 1.519)
+  Source Clock:         clk_4M rising at 250.000ns
+  Destination Clock:    clk_50M rising at 260.000ns
+  Clock Uncertainty:    0.285ns
+
+  Clock Uncertainty:          0.285ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.321ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: ADC1/pdata1_8 to SPI_out/MSB_shift_out_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y25.BQ       Tcko                  0.408   ADC1/pdata1<10>
+                                                       ADC1/pdata1_8
+    SLICE_X10Y27.A1      net (fanout=2)        0.903   ADC1/pdata1<8>
+    SLICE_X10Y27.CLK     Tas                   0.289   SPI_out/MSB_shift_out<5>
+                                                       SPI_out/Mmux_MSB_shift_out[7]_MSB_shift_out[7]_mux_24_OUT31
+                                                       SPI_out/MSB_shift_out_2
+    -------------------------------------------------  ---------------------------
+    Total                                      1.600ns (0.697ns logic, 0.903ns route)
+                                                       (43.6% logic, 56.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point SPI_out/LSB_shift_out_1 (SLICE_X8Y27.A2), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     7.239ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ADC1/pdata1_0 (FF)
+  Destination:          SPI_out/LSB_shift_out_1 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      1.489ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.987ns (0.530 - 1.517)
+  Source Clock:         clk_4M rising at 250.000ns
+  Destination Clock:    clk_50M rising at 260.000ns
+  Clock Uncertainty:    0.285ns
+
+  Clock Uncertainty:          0.285ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.321ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: ADC1/pdata1_0 to SPI_out/LSB_shift_out_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y24.BQ       Tcko                  0.391   ADC1/pdata1<4>
+                                                       ADC1/pdata1_0
+    SLICE_X8Y27.A2       net (fanout=2)        0.757   ADC1/pdata1<0>
+    SLICE_X8Y27.CLK      Tas                   0.341   SPI_out/LSB_shift_out<4>
+                                                       SPI_out/Mmux_LSB_shift_out[7]_LSB_shift_out[7]_mux_25_OUT11
+                                                       SPI_out/LSB_shift_out_1
+    -------------------------------------------------  ---------------------------
+    Total                                      1.489ns (0.732ns logic, 0.757ns route)
+                                                       (49.2% logic, 50.8% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: PERIOD analysis for net "clk_50M" derived from
+ NET "clock_manager/clkin1" PERIOD = 10 ns HIGH 50%;
+ multiplied by 2.00 to 20 nS  
+
+--------------------------------------------------------------------------------
+
+Paths for end point SPI_out/MSB_shift_out_7 (SLICE_X10Y28.B5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.423ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               SPI_out/MSB_shift_out_6 (FF)
+  Destination:          SPI_out/MSB_shift_out_7 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.423ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_50M rising at 20.000ns
+  Destination Clock:    clk_50M rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: SPI_out/MSB_shift_out_6 to SPI_out/MSB_shift_out_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y28.BQ      Tcko                  0.234   SPI_out/MSB_shift_out<6>
+                                                       SPI_out/MSB_shift_out_6
+    SLICE_X10Y28.B5      net (fanout=1)        0.058   SPI_out/MSB_shift_out<6>
+    SLICE_X10Y28.CLK     Tah         (-Th)    -0.131   SPI_out/MSB_shift_out<6>
+                                                       SPI_out/Mmux_MSB_shift_out[7]_MSB_shift_out[7]_mux_24_OUT81
+                                                       SPI_out/MSB_shift_out_7
+    -------------------------------------------------  ---------------------------
+    Total                                      0.423ns (0.365ns logic, 0.058ns route)
+                                                       (86.3% logic, 13.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point SPI_out/bit_cntr_0 (SLICE_X8Y28.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.433ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               SPI_out/bit_cntr_0 (FF)
+  Destination:          SPI_out/bit_cntr_0 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.433ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_50M rising at 20.000ns
+  Destination Clock:    clk_50M rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: SPI_out/bit_cntr_0 to SPI_out/bit_cntr_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y28.AQ       Tcko                  0.200   SPI_out/bit_cntr<1>
+                                                       SPI_out/bit_cntr_0
+    SLICE_X8Y28.A6       net (fanout=6)        0.043   SPI_out/bit_cntr<0>
+    SLICE_X8Y28.CLK      Tah         (-Th)    -0.190   SPI_out/bit_cntr<1>
+                                                       SPI_out/Mcount_bit_cntr_xor<0>11_INV_0
+                                                       SPI_out/bit_cntr_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.433ns (0.390ns logic, 0.043ns route)
+                                                       (90.1% logic, 9.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point SPI_out/bit_cntr_2 (SLICE_X8Y28.D4), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.448ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               SPI_out/bit_cntr_1 (FF)
+  Destination:          SPI_out/bit_cntr_2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.448ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_50M rising at 20.000ns
+  Destination Clock:    clk_50M rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: SPI_out/bit_cntr_1 to SPI_out/bit_cntr_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y28.BQ       Tcko                  0.200   SPI_out/bit_cntr<1>
+                                                       SPI_out/bit_cntr_1
+    SLICE_X8Y28.D4       net (fanout=5)        0.127   SPI_out/bit_cntr<1>
+    SLICE_X8Y28.CLK      Tah         (-Th)    -0.121   SPI_out/bit_cntr<1>
+                                                       SPI_out/Mcount_bit_cntr_xor<2>11
+                                                       SPI_out/bit_cntr_2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.448ns (0.321ns logic, 0.127ns route)
+                                                       (71.7% logic, 28.3% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: PERIOD analysis for net "clk_50M" derived from
+ NET "clock_manager/clkin1" PERIOD = 10 ns HIGH 50%;
+ multiplied by 2.00 to 20 nS  
+
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.000ns (1000.000MHz) (Tcp)
+  Physical resource: SPI_out/cs_sync<1>/CLK
+  Logical resource: SPI_out/Mshreg_cs_sync_1/CLK
+  Location pin: SLICE_X6Y28.CLK
+  Clock network: clk_50M
+--------------------------------------------------------------------------------
+Slack: 19.075ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.925ns (1081.081MHz) (Tpllper_CLKOUT(Foutmax))
+  Physical resource: clock_manager/pll_base_inst/PLL_ADV/CLKOUT0
+  Logical resource: clock_manager/pll_base_inst/PLL_ADV/CLKOUT0
+  Location pin: PLL_ADV_X0Y0.CLKOUT0
+  Clock network: clk_50M
+--------------------------------------------------------------------------------
+Slack: 19.570ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.430ns (2325.581MHz) (Tcp)
+  Physical resource: SPI_out/LSB_shift_out<4>/CLK
+  Logical resource: SPI_out/LSB_shift_out_1/CK
+  Location pin: SLICE_X8Y27.CLK
+  Clock network: clk_50M
 --------------------------------------------------------------------------------
 
 
@@ -508,8 +728,9 @@ Derived Constraints for clock_manager/clkin1
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|clock_manager/clkin1           |     10.000ns|      3.334ns|      0.177ns|            0|            0|            0|           39|
-| clock_manager/clkout1         |    250.000ns|      4.434ns|          N/A|            0|            0|           39|            0|
+|clock_manager/clkin1           |     10.000ns|      3.334ns|      3.011ns|            0|            0|            0|          848|
+| clock_manager/clkout1         |    250.000ns|      5.736ns|          N/A|            0|            0|          417|            0|
+| clk_50M                       |     20.000ns|      6.022ns|          N/A|            0|            0|          431|            0|
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 All constraints were met.
@@ -524,7 +745,7 @@ Clock to Setup on destination clock fpga_clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-fpga_clk       |    1.470|         |    2.217|    1.490|
+fpga_clk       |    4.086|    2.868|    2.326|    1.493|
 ---------------+---------+---------+---------+---------+
 
 
@@ -533,16 +754,16 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 39 paths, 0 nets, and 33 connections
+Constraints cover 848 paths, 0 nets, and 344 connections
 
 Design statistics:
-   Minimum period:   4.434ns{1}   (Maximum frequency: 225.530MHz)
+   Minimum period:   6.022ns{1}   (Maximum frequency: 166.058MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Thu Feb 16 19:47:29 2017 
+Analysis completed Wed Feb 22 20:28:48 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:

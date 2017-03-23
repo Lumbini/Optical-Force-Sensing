@@ -25,21 +25,24 @@ module SPI_to_USB(
 	 input SPI_clk,
 	 input cs,
     output MISO
+	 //output reg beginData
     );
-	 reg [15:0] shift_out;
+	 reg [7:0] MSB_shift_out;
+	 reg [7:0] LSB_shift_out;
 	 reg [2:0] sclk_sync;
 	 reg [2:0] cs_sync;
+	 reg [4:0] bit_cntr = 0;
 	 reg ndata;
 	 
-	 assign MISO = shift_out[15];
+	 assign MISO = (bit_cntr > 8)?MSB_shift_out[7]:LSB_shift_out[7]; //CR EDIT
 	 always @(posedge clk)
 		sclk_sync <= {sclk_sync[1:0], SPI_clk};
 	 
 	 always @(posedge clk)
 		cs_sync <= {cs_sync[1:0], cs};
 		
-	 wire sclk_rising_edge = (sclk_sync[2:1] == 2'b01);
-	 wire sclk_falling_edge = (sclk_sync[2:1] == 2'b10);
+	 wire sclk_rising_edge = (sclk_sync[1:0] == 2'b01);
+	 wire sclk_falling_edge = (sclk_sync[1:0] == 2'b10);
 	 
 	 wire cs_active = ~cs_sync[1];
 	 
@@ -50,13 +53,33 @@ module SPI_to_USB(
 			ndata <= 1'b1;
 		if(cs_active)
 		begin
+			//beginData <=0;
 			if(sclk_falling_edge)
-				shift_out <={shift_out[14:0], 1'b0};
+			begin
+				if(bit_cntr > 8)
+					MSB_shift_out <= {MSB_shift_out[6:0], 1'b0};
+				else
+					LSB_shift_out <= {LSB_shift_out[6:0], 1'b0};
+				if(bit_cntr > 0)
+					bit_cntr <= bit_cntr - 1'b1;
+			end
+			if((bit_cntr == 4'd0)&&(ndata))
+			begin
+				MSB_shift_out <= {2'b00, data1[11:7], 1'b1};
+				LSB_shift_out <= {data1[6:0], 1'b0};
+				ndata <= 1'b0;
+				bit_cntr <= 5'd16;
+				//beginData <= 1'b1;
+			end
 		end
 		else
 		if(ndata)
-			shift_out <= {4'b0000, data1};
+		begin
+			MSB_shift_out <= {2'b00, data1[11:7], 1'b1};
+			LSB_shift_out <= {data1[6:0], 1'b0};
 			ndata <= 1'b0;
+			bit_cntr <= 5'd16;
+		end
 	end
 
 endmodule

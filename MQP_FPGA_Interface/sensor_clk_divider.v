@@ -23,19 +23,20 @@ module sensor_clk_divider(
 	 input reset,
     output sensor_clk
     );
-	reg [5:0]cntr = 0;
+	reg [4:0]cntr = 0;
 	
-	assign sensor_clk = (cntr == 19);
+	assign sensor_clk = (cntr == 5'd19);
 	
-	//Asynchronous Reset
-	always @(posedge reset)
-		cntr <= 0;
 	
-	//Divide 3.125MHz clock to 31.25KHz
-	always @(posedge clk_3M)
-		if (cntr == 6'd19)
+	//Divide 20MHz clock to 1MHz
+	always @(posedge clk_3M, posedge reset)
+	begin
+		if(reset)
+			cntr <= 0;
+		else if (cntr == 5'd19)
 			cntr <= 0;
 		else
 			cntr <= cntr + 1'b1;
+	end
 
 endmodule

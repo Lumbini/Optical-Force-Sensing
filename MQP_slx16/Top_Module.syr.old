@@ -1,0 +1,773 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.23 secs
+ 
+--> Reading design: Top_Module.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Top_Module.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Top_Module"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : Top_Module
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\ipcore_dir\DCM_MQP.v" into library work
+Parsing module <DCM_MQP>.
+Analyzing Verilog file "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\SPI_to_USB.v" into library work
+Parsing module <SPI_to_USB>.
+Analyzing Verilog file "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\Serial_Sample_Control.v" into library work
+Parsing module <Serial_Sample_Control>.
+Analyzing Verilog file "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\sensor_clk_divider.v" into library work
+Parsing module <sensor_clk_divider>.
+Analyzing Verilog file "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\ADC_control.v" into library work
+Parsing module <ADC_control>.
+Analyzing Verilog file "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\Top_Module.v" into library work
+Parsing module <Top_Module>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <Top_Module>.
+
+Elaborating module <Serial_Sample_Control>.
+
+Elaborating module <sensor_clk_divider>.
+
+Elaborating module <ADC_control>.
+WARNING:HDLCompiler:413 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\ADC_control.v" Line 48: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\Top_Module.v" Line 71: Assignment to Data2 ignored, since the identifier is never used
+
+Elaborating module <SPI_to_USB>.
+
+Elaborating module <DCM_MQP>.
+
+Elaborating module <IBUFG>.
+
+Elaborating module <PLL_BASE(BANDWIDTH="OPTIMIZED",CLK_FEEDBACK="CLKFBOUT",COMPENSATION="SYSTEM_SYNCHRONOUS",DIVCLK_DIVIDE=1,CLKFBOUT_MULT=4,CLKFBOUT_PHASE=0.0,CLKOUT0_DIVIDE=8,CLKOUT0_PHASE=0.0,CLKOUT0_DUTY_CYCLE=0.5,CLKOUT1_DIVIDE=100,CLKOUT1_PHASE=0.0,CLKOUT1_DUTY_CYCLE=0.5,CLKIN_PERIOD=10.0,REF_JITTER=0.01)>.
+WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\ipcore_dir\DCM_MQP.v" Line 121: Assignment to clkout2_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\ipcore_dir\DCM_MQP.v" Line 122: Assignment to clkout3_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\ipcore_dir\DCM_MQP.v" Line 123: Assignment to clkout4_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\ipcore_dir\DCM_MQP.v" Line 124: Assignment to clkout5_unused ignored, since the identifier is never used
+
+Elaborating module <BUFG>.
+WARNING:HDLCompiler:1127 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\Top_Module.v" Line 93: Assignment to lock ignored, since the identifier is never used
+
+Elaborating module <ODDR2(DDR_ALIGNMENT="NONE",INIT=1'b0,SRTYPE="SYNC")>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <Top_Module>.
+    Related source file is "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\Top_Module.v".
+INFO:Xst:3210 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\Top_Module.v" line 62: Output port <pdata2> of the instance <ADC1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\Top_Module.v" line 85: Output port <LOCKED> of the instance <clock_manager> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <Top_Module> synthesized.
+
+Synthesizing Unit <Serial_Sample_Control>.
+    Related source file is "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\Serial_Sample_Control.v".
+    Found 9-bit register for signal <cntr>.
+    Found 9-bit adder for signal <cntr[8]_GND_2_o_add_1_OUT> created at line 37.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   9 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Serial_Sample_Control> synthesized.
+
+Synthesizing Unit <sensor_clk_divider>.
+    Related source file is "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\sensor_clk_divider.v".
+    Found 5-bit register for signal <cntr>.
+    Found 5-bit adder for signal <cntr[4]_GND_3_o_add_2_OUT> created at line 39.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   5 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <sensor_clk_divider> synthesized.
+
+Synthesizing Unit <ADC_control>.
+    Related source file is "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\ADC_control.v".
+    Found 12-bit register for signal <shift_in1>.
+    Found 12-bit register for signal <shift_in2>.
+    Found 1-bit register for signal <delay_en>.
+    Found 3-bit register for signal <cs_delay>.
+    Found 5-bit register for signal <sdata_cntr>.
+    Found 12-bit register for signal <pdata1>.
+    Found 12-bit register for signal <pdata2>.
+    Found 1-bit register for signal <new_Data>.
+    Found 7-bit register for signal <cntr>.
+    Found 7-bit subtractor for signal <cntr[6]_GND_4_o_sub_6_OUT> created at line 64.
+    Found 3-bit subtractor for signal <cs_delay[2]_GND_4_o_sub_12_OUT> created at line 74.
+    Found 5-bit adder for signal <sdata_cntr[4]_GND_4_o_add_18_OUT> created at line 105.
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  65 D-type flip-flop(s).
+	inferred   5 Multiplexer(s).
+Unit <ADC_control> synthesized.
+
+Synthesizing Unit <SPI_to_USB>.
+    Related source file is "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\SPI_to_USB.v".
+    Found 2-bit register for signal <cs_sync<1:0>>.
+    Found 1-bit register for signal <ndata>.
+    Found 8-bit register for signal <MSB_shift_out>.
+    Found 8-bit register for signal <LSB_shift_out>.
+    Found 5-bit register for signal <bit_cntr>.
+    Found 2-bit register for signal <sclk_sync<1:0>>.
+    Found 5-bit subtractor for signal <bit_cntr[4]_GND_5_o_sub_13_OUT> created at line 64.
+    Found 5-bit comparator greater for signal <GND_5_o_bit_cntr[4]_LessThan_1_o> created at line 37
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  26 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   5 Multiplexer(s).
+Unit <SPI_to_USB> synthesized.
+
+Synthesizing Unit <DCM_MQP>.
+    Related source file is "\\storage.wpi.edu\home\my_documents\MQP\MQP_slx16\ipcore_dir\DCM_MQP.v".
+    Summary:
+	no macro.
+Unit <DCM_MQP> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 6
+ 3-bit subtractor                                      : 1
+ 5-bit adder                                           : 2
+ 5-bit subtractor                                      : 1
+ 7-bit subtractor                                      : 1
+ 9-bit adder                                           : 1
+# Registers                                            : 17
+ 1-bit register                                        : 3
+ 12-bit register                                       : 4
+ 2-bit register                                        : 2
+ 3-bit register                                        : 1
+ 5-bit register                                        : 3
+ 7-bit register                                        : 1
+ 8-bit register                                        : 2
+ 9-bit register                                        : 1
+# Comparators                                          : 1
+ 5-bit comparator greater                              : 1
+# Multiplexers                                         : 12
+ 1-bit 2-to-1 multiplexer                              : 1
+ 12-bit 2-to-1 multiplexer                             : 2
+ 3-bit 2-to-1 multiplexer                              : 1
+ 32-bit 2-to-1 multiplexer                             : 1
+ 5-bit 2-to-1 multiplexer                              : 1
+ 7-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 4
+ 9-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <ADC_control>.
+The following registers are absorbed into counter <cs_delay>: 1 register on signal <cs_delay>.
+The following registers are absorbed into counter <sdata_cntr>: 1 register on signal <sdata_cntr>.
+The following registers are absorbed into counter <cntr>: 1 register on signal <cntr>.
+Unit <ADC_control> synthesized (advanced).
+
+Synthesizing (advanced) Unit <SPI_to_USB>.
+The following registers are absorbed into counter <bit_cntr>: 1 register on signal <bit_cntr>.
+Unit <SPI_to_USB> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Serial_Sample_Control>.
+The following registers are absorbed into counter <cntr>: 1 register on signal <cntr>.
+Unit <Serial_Sample_Control> synthesized (advanced).
+
+Synthesizing (advanced) Unit <sensor_clk_divider>.
+The following registers are absorbed into counter <cntr>: 1 register on signal <cntr>.
+Unit <sensor_clk_divider> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 6
+ 3-bit down counter                                    : 1
+ 5-bit down counter                                    : 1
+ 5-bit up counter                                      : 2
+ 7-bit down counter                                    : 1
+ 9-bit up counter                                      : 1
+# Registers                                            : 71
+ Flip-Flops                                            : 71
+# Comparators                                          : 1
+ 5-bit comparator greater                              : 1
+# Multiplexers                                         : 7
+ 12-bit 2-to-1 multiplexer                             : 2
+ 32-bit 2-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 4
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <LSB_shift_out_0> (without init value) has a constant value of 0 in block <SPI_to_USB>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:1901 - Instance clock_manager/pll_base_inst in unit clock_manager/pll_base_inst of type PLL_BASE has been replaced by PLL_ADV
+
+Optimizing unit <Top_Module> ...
+
+Optimizing unit <ADC_control> ...
+
+Optimizing unit <SPI_to_USB> ...
+WARNING:Xst:2677 - Node <ADC1/pdata2_11> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_10> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_9> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_8> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_7> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_6> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_5> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_4> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_3> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_2> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_1> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/pdata2_0> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_11> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_10> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_9> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_8> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_7> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_6> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_5> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_4> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_3> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_2> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_1> of sequential type is unconnected in block <Top_Module>.
+WARNING:Xst:2677 - Node <ADC1/shift_in2_0> of sequential type is unconnected in block <Top_Module>.
+INFO:Xst:2261 - The FF/Latch <SPI_out/bit_cntr_4> in Unit <Top_Module> is equivalent to the following FF/Latch, which will be removed : <SPI_out/MSB_shift_out_0> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Top_Module, actual ratio is 1.
+
+Final Macro Processing ...
+
+Processing Unit <Top_Module> :
+	Found 2-bit shift register for signal <SPI_out/cs_sync_1>.
+Unit <Top_Module> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 77
+ Flip-Flops                                            : 77
+# Shift Registers                                      : 1
+ 2-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : Top_Module.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 136
+#      GND                         : 1
+#      INV                         : 4
+#      LUT2                        : 4
+#      LUT3                        : 29
+#      LUT4                        : 29
+#      LUT5                        : 14
+#      LUT6                        : 35
+#      MUXCY                       : 8
+#      MUXF7                       : 2
+#      VCC                         : 1
+#      XORCY                       : 9
+# FlipFlops/Latches                : 82
+#      FD                          : 21
+#      FDC                         : 14
+#      FDCE                        : 12
+#      FDE                         : 27
+#      FDRE                        : 4
+#      ODDR2                       : 4
+# Shift Registers                  : 1
+#      SRLC16E                     : 1
+# Clock Buffers                    : 1
+#      BUFG                        : 1
+# IO Buffers                       : 12
+#      IBUF                        : 4
+#      IBUFG                       : 1
+#      OBUF                        : 7
+# Others                           : 1
+#      PLL_ADV                     : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              82  out of  18224     0%  
+ Number of Slice LUTs:                  116  out of   9112     1%  
+    Number used as Logic:               115  out of   9112     1%  
+    Number used as Memory:                1  out of   2176     0%  
+       Number used as SRL:                1
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    122
+   Number with an unused Flip Flop:      40  out of    122    32%  
+   Number with an unused LUT:             6  out of    122     4%  
+   Number of fully used LUT-FF pairs:    76  out of    122    62%  
+   Number of unique control sets:        12
+
+IO Utilization: 
+ Number of IOs:                          13
+ Number of bonded IOBs:                  12  out of    232     5%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+ Number of PLL_ADVs:                      1  out of      2    50%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------------+-------------------------------+-------+
+Clock Signal                             | Clock buffer(FF name)         | Load  |
+-----------------------------------------+-------------------------------+-------+
+sensor_clk_int_inv(sensor_clk_int_inv1:O)| NONE(*)(sample_control/cntr_0)| 10    |
+clock_manager/pll_base_inst/CLKOUT1      | BUFG                          | 40    |
+ADC1/_n01071(ADC1/_n010711:O)            | NONE(*)(clock_forward_inst_3) | 1     |
+cs_int(ADC1/chip_select<2>1:O)           | NONE(*)(clock_forward_inst_3) | 1     |
+ext_clk_INV_26_o(ext_clk_INV_26_o1:O)    | NONE(*)(clock_forward_inst_4) | 1     |
+ext_clk(ADC1/Mmux_n007711:O)             | NONE(*)(clock_forward_inst_4) | 1     |
+sensor_clk_int(scd/sensor_clk<4>1:O)     | NONE(*)(clock_forward_inst_2) | 9     |
+clock_manager/pll_base_inst/CLKOUT0      | NONE(SPI_out/bit_cntr_0)      | 24    |
+-----------------------------------------+-------------------------------+-------+
+(*) These 6 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 6.087ns (Maximum Frequency: 164.298MHz)
+   Minimum input arrival time before clock: 5.321ns
+   Maximum output required time after clock: 5.762ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'sensor_clk_int_inv'
+  Clock period: 4.220ns (frequency: 236.953MHz)
+  Total number of paths / destination ports: 531 / 9
+-------------------------------------------------------------------------
+Delay:               4.220ns (Levels of Logic = 12)
+  Source:            sample_control/cntr_2 (FF)
+  Destination:       sample_control/cntr_8 (FF)
+  Source Clock:      sensor_clk_int_inv rising
+  Destination Clock: sensor_clk_int_inv rising
+
+  Data Path: sample_control/cntr_2 to sample_control/cntr_8
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.447   0.898  sample_control/cntr_2 (sample_control/cntr_2)
+     LUT4:I0->O            2   0.203   0.617  sample_control/GND_2_o_GND_2_o_equal_1_o_inv_SW0 (N01)
+     LUT6:I5->O            9   0.205   1.058  sample_control/GND_2_o_GND_2_o_equal_1_o<8> (sample_control/GND_2_o_GND_2_o_equal_1_o)
+     LUT3:I0->O            1   0.205   0.000  sample_control/Mcount_cntr_lut<0> (sample_control/Mcount_cntr_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  sample_control/Mcount_cntr_cy<0> (sample_control/Mcount_cntr_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  sample_control/Mcount_cntr_cy<1> (sample_control/Mcount_cntr_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  sample_control/Mcount_cntr_cy<2> (sample_control/Mcount_cntr_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  sample_control/Mcount_cntr_cy<3> (sample_control/Mcount_cntr_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  sample_control/Mcount_cntr_cy<4> (sample_control/Mcount_cntr_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  sample_control/Mcount_cntr_cy<5> (sample_control/Mcount_cntr_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  sample_control/Mcount_cntr_cy<6> (sample_control/Mcount_cntr_cy<6>)
+     MUXCY:CI->O           0   0.019   0.000  sample_control/Mcount_cntr_cy<7> (sample_control/Mcount_cntr_cy<7>)
+     XORCY:CI->O           1   0.180   0.000  sample_control/Mcount_cntr_xor<8> (sample_control/Mcount_cntr8)
+     FDC:D                     0.102          sample_control/cntr_8
+    ----------------------------------------
+    Total                      4.220ns (1.647ns logic, 2.573ns route)
+                                       (39.0% logic, 61.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clock_manager/pll_base_inst/CLKOUT1'
+  Clock period: 6.087ns (frequency: 164.298MHz)
+  Total number of paths / destination ports: 417 / 62
+-------------------------------------------------------------------------
+Delay:               3.043ns (Levels of Logic = 1)
+  Source:            ADC1/cs_delay_2 (FF)
+  Destination:       ADC1/pdata1_11 (FF)
+  Source Clock:      clock_manager/pll_base_inst/CLKOUT1 falling
+  Destination Clock: clock_manager/pll_base_inst/CLKOUT1 rising
+
+  Data Path: ADC1/cs_delay_2 to ADC1/pdata1_11
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              13   0.447   1.161  ADC1/cs_delay_2 (ADC1/cs_delay_2)
+     LUT3:I0->O           12   0.205   0.908  ADC1/_n010711 (ADC1/_n01071)
+     FDE:CE                    0.322          ADC1/pdata1_0
+    ----------------------------------------
+    Total                      3.043ns (0.974ns logic, 2.069ns route)
+                                       (32.0% logic, 68.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clock_manager/pll_base_inst/CLKOUT0'
+  Clock period: 4.856ns (frequency: 205.929MHz)
+  Total number of paths / destination ports: 419 / 44
+-------------------------------------------------------------------------
+Delay:               4.856ns (Levels of Logic = 3)
+  Source:            SPI_out/bit_cntr_2 (FF)
+  Destination:       SPI_out/LSB_shift_out_7 (FF)
+  Source Clock:      clock_manager/pll_base_inst/CLKOUT0 rising
+  Destination Clock: clock_manager/pll_base_inst/CLKOUT0 rising
+
+  Data Path: SPI_out/bit_cntr_2 to SPI_out/LSB_shift_out_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             6   0.447   0.973  SPI_out/bit_cntr_2 (SPI_out/bit_cntr_2)
+     LUT4:I1->O           15   0.205   0.982  SPI_out/Mcount_bit_cntr_xor<4>111 (SPI_out/Mcount_bit_cntr_xor<4>11)
+     LUT4:I3->O            6   0.205   0.745  SPI_out/_n00681 (SPI_out/_n0068)
+     LUT6:I5->O            7   0.205   0.773  SPI_out/_n0083_inv1 (SPI_out/_n0083_inv)
+     FDE:CE                    0.322          SPI_out/MSB_shift_out_1
+    ----------------------------------------
+    Total                      4.856ns (1.384ns logic, 3.472ns route)
+                                       (28.5% logic, 71.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'sensor_clk_int'
+  Clock period: 2.734ns (frequency: 365.724MHz)
+  Total number of paths / destination ports: 36 / 8
+-------------------------------------------------------------------------
+Delay:               2.734ns (Levels of Logic = 2)
+  Source:            ADC1/cntr_0 (FF)
+  Destination:       ADC1/cntr_6 (FF)
+  Source Clock:      sensor_clk_int rising
+  Destination Clock: sensor_clk_int rising
+
+  Data Path: ADC1/cntr_0 to ADC1/cntr_6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               6   0.447   0.992  ADC1/cntr_0 (ADC1/cntr_0)
+     LUT4:I0->O            4   0.203   0.788  ADC1/Mcount_cntr411 (ADC1/Mcount_cntr4_bdd0)
+     LUT6:I4->O            1   0.203   0.000  ADC1/delay_en_rstpot (ADC1/delay_en_rstpot)
+     FD:D                      0.102          ADC1/delay_en
+    ----------------------------------------
+    Total                      2.734ns (0.955ns logic, 1.779ns route)
+                                       (34.9% logic, 65.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'sensor_clk_int_inv'
+  Total number of paths / destination ports: 9 / 9
+-------------------------------------------------------------------------
+Offset:              3.043ns (Levels of Logic = 1)
+  Source:            reset (PAD)
+  Destination:       sample_control/cntr_0 (FF)
+  Destination Clock: sensor_clk_int_inv rising
+
+  Data Path: reset to sample_control/cntr_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            39   1.222   1.391  reset_IBUF (reset_IBUF)
+     FDC:CLR                   0.430          sample_control/cntr_0
+    ----------------------------------------
+    Total                      3.043ns (1.652ns logic, 1.391ns route)
+                                       (54.3% logic, 45.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_manager/pll_base_inst/CLKOUT1'
+  Total number of paths / destination ports: 46 / 36
+-------------------------------------------------------------------------
+Offset:              5.321ns (Levels of Logic = 5)
+  Source:            reset (PAD)
+  Destination:       ADC1/sdata_cntr_2 (FF)
+  Destination Clock: clock_manager/pll_base_inst/CLKOUT1 rising
+
+  Data Path: reset to ADC1/sdata_cntr_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            39   1.222   1.391  reset_IBUF (reset_IBUF)
+     INV:I->O              4   0.206   0.931  ADC1/reset_inv1_INV_0 (ADC1/reset_inv)
+     LUT6:I2->O            1   0.203   0.000  ADC1/_n010711_SW2_G (N43)
+     MUXF7:I1->O           1   0.140   0.924  ADC1/_n010711_SW2 (N34)
+     LUT6:I1->O            1   0.203   0.000  ADC1/sdata_cntr_2_rstpot (ADC1/sdata_cntr_2_rstpot)
+     FD:D                      0.102          ADC1/sdata_cntr_2
+    ----------------------------------------
+    Total                      5.321ns (2.076ns logic, 3.245ns route)
+                                       (39.0% logic, 61.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_manager/pll_base_inst/CLKOUT0'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              1.903ns (Levels of Logic = 1)
+  Source:            SPI_clk (PAD)
+  Destination:       SPI_out/sclk_sync_0 (FF)
+  Destination Clock: clock_manager/pll_base_inst/CLKOUT0 rising
+
+  Data Path: SPI_clk to SPI_out/sclk_sync_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.579  SPI_clk_IBUF (SPI_clk_IBUF)
+     FD:D                      0.102          SPI_out/sclk_sync_0
+    ----------------------------------------
+    Total                      1.903ns (1.324ns logic, 0.579ns route)
+                                       (69.6% logic, 30.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'sensor_clk_int_inv'
+  Total number of paths / destination ports: 9 / 1
+-------------------------------------------------------------------------
+Offset:              5.733ns (Levels of Logic = 3)
+  Source:            sample_control/cntr_3 (FF)
+  Destination:       SI1 (PAD)
+  Source Clock:      sensor_clk_int_inv rising
+
+  Data Path: sample_control/cntr_3 to SI1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.447   0.898  sample_control/cntr_3 (sample_control/cntr_3)
+     LUT4:I0->O            1   0.203   0.580  sample_control/serial_out<8>_SW0 (N2)
+     LUT6:I5->O            9   0.205   0.829  sample_control/serial_out<8> (SI1_OBUF)
+     OBUF:I->O                 2.571          SI1_OBUF (SI1)
+    ----------------------------------------
+    Total                      5.733ns (3.426ns logic, 2.307ns route)
+                                       (59.8% logic, 40.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clock_manager/pll_base_inst/CLKOUT0'
+  Total number of paths / destination ports: 7 / 1
+-------------------------------------------------------------------------
+Offset:              5.762ns (Levels of Logic = 3)
+  Source:            SPI_out/bit_cntr_1 (FF)
+  Destination:       SPI_MISO (PAD)
+  Source Clock:      clock_manager/pll_base_inst/CLKOUT0 rising
+
+  Data Path: SPI_out/bit_cntr_1 to SPI_MISO
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             7   0.447   1.002  SPI_out/bit_cntr_1 (SPI_out/bit_cntr_1)
+     LUT4:I1->O            3   0.205   0.755  SPI_out/_n0094_inv11 (SPI_out/_n0094_inv1)
+     LUT4:I2->O            1   0.203   0.579  SPI_out/Mmux_MISO11 (SPI_MISO_OBUF)
+     OBUF:I->O                 2.571          SPI_MISO_OBUF (SPI_MISO)
+    ----------------------------------------
+    Total                      5.762ns (3.426ns logic, 2.336ns route)
+                                       (59.5% logic, 40.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'sensor_clk_int'
+  Total number of paths / destination ports: 7 / 1
+-------------------------------------------------------------------------
+Offset:              5.680ns (Levels of Logic = 3)
+  Source:            ADC1/cntr_0 (FF)
+  Destination:       interrupt (PAD)
+  Source Clock:      sensor_clk_int rising
+
+  Data Path: ADC1/cntr_0 to interrupt
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               6   0.447   0.992  ADC1/cntr_0 (ADC1/cntr_0)
+     LUT4:I0->O            4   0.203   0.684  ADC1/Mcount_cntr411 (ADC1/Mcount_cntr4_bdd0)
+     LUT4:I3->O            1   0.205   0.579  ADC1/interrupt1 (interrupt_OBUF)
+     OBUF:I->O                 2.571          interrupt_OBUF (interrupt)
+    ----------------------------------------
+    Total                      5.680ns (3.426ns logic, 2.254ns route)
+                                       (60.3% logic, 39.7% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clock_manager/pll_base_inst/CLKOUT0
+-----------------------------------+---------+---------+---------+---------+
+                                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------------+---------+---------+---------+---------+
+clock_manager/pll_base_inst/CLKOUT0|    4.856|         |         |         |
+clock_manager/pll_base_inst/CLKOUT1|    1.713|         |         |         |
+-----------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clock_manager/pll_base_inst/CLKOUT1
+-----------------------------------+---------+---------+---------+---------+
+                                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------------+---------+---------+---------+---------+
+clock_manager/pll_base_inst/CLKOUT1|    3.921|    3.043|    2.667|         |
+sensor_clk_int                     |         |         |    2.590|         |
+-----------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock sensor_clk_int
+------------------+---------+---------+---------+---------+
+                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------+---------+---------+---------+---------+
+sensor_clk_int    |    2.734|         |         |         |
+sensor_clk_int_inv|    3.470|         |         |         |
+------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock sensor_clk_int_inv
+------------------+---------+---------+---------+---------+
+                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------+---------+---------+---------+---------+
+sensor_clk_int_inv|    4.220|         |         |         |
+------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.34 secs
+ 
+--> 
+
+Total memory usage is 259748 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   32 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
+

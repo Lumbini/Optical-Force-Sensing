@@ -50,7 +50,7 @@
 set projDir [file dirname [info script]]
 set projName DCM_MQP
 set topName DCM_MQP_exdes
-set device xc6slx9tqg144-3
+set device xc6slx9tqg144-2
 
 create_project $projName $projDir/results/$projName -part $device
 

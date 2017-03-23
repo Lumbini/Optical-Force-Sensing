@@ -5,5 +5,230 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v" Line 77: Assignment to <arg fmt="%s" index="1">fpga_clk</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\ipcore_dir\DCM_MQP.v" Line 121: Assignment to <arg fmt="%s" index="1">clkout2_unused</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\ipcore_dir\DCM_MQP.v" Line 122: Assignment to <arg fmt="%s" index="1">clkout3_unused</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\ipcore_dir\DCM_MQP.v" Line 123: Assignment to <arg fmt="%s" index="1">clkout4_unused</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\ipcore_dir\DCM_MQP.v" Line 124: Assignment to <arg fmt="%s" index="1">clkout5_unused</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v" Line 87: Assignment to <arg fmt="%s" index="1">clk_50M</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v" Line 91: Assignment to <arg fmt="%s" index="1">lock</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v" Line 107: Assignment to <arg fmt="%s" index="1">SET1_pdata0</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v" Line 108: Assignment to <arg fmt="%s" index="1">SET1_pdata1</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v" Line 109: Assignment to <arg fmt="%s" index="1">SET1_New_DATA_Pulse</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v" Line 122: Net &lt;<arg fmt="%s" index="1">ADC_Internal_clk</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v" Line 152: Net &lt;<arg fmt="%s" index="1">ADC_Internal_CS</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v</arg>&quot; line <arg fmt="%s" index="2">83</arg>: Output port &lt;<arg fmt="%s" index="3">CLK_OUT1</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Global_Clock_Manager</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v</arg>&quot; line <arg fmt="%s" index="2">83</arg>: Output port &lt;<arg fmt="%s" index="3">LOCKED</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Global_Clock_Manager</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v</arg>&quot; line <arg fmt="%s" index="2">98</arg>: Output port &lt;<arg fmt="%s" index="3">pdata1</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">SET1_ADC_Controller</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v</arg>&quot; line <arg fmt="%s" index="2">98</arg>: Output port &lt;<arg fmt="%s" index="3">pdata2</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">SET1_ADC_Controller</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">\\storage.wpi.edu\home\my_documents\MQP\MQP_FPGA_Interface\Top_Module.v</arg>&quot; line <arg fmt="%s" index="2">98</arg>: Output port &lt;<arg fmt="%s" index="3">new_Data</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">SET1_ADC_Controller</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">ADC_Internal_clk</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">ADC_Internal_CS</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="info" file="Xst" num="1901" delta="old" >Instance <arg fmt="%s" index="1">Global_Clock_Manager/pll_base_inst</arg> in unit <arg fmt="%s" index="2">Global_Clock_Manager/pll_base_inst</arg> of type <arg fmt="%s" index="3">PLL_BASE</arg> has been replaced by <arg fmt="%s" index="4">PLL_ADV</arg>
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/sdata_cntr_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/sdata_cntr_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/sdata_cntr_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/sdata_cntr_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/sdata_cntr_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata2_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata2_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata2_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata2_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata2_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata2_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata2_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata2_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata2_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata2_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata2_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata2_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata1_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata1_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata1_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata1_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata1_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata1_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata1_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata1_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata1_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata1_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata1_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/pdata1_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in2_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in2_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in2_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in2_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in2_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in2_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in2_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in2_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in2_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in2_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in2_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in2_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in1_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in1_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in1_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in1_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in1_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in1_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in1_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in1_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in1_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in1_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in1_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/shift_in1_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">SET1_ADC_Controller/new_Data</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top_Module</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="2169" delta="old" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+</msg>
+
 </messages>
 
